@@ -258,6 +258,38 @@
             </objects>
             <point key="canvasLocation" x="684" y="702.99850074962524"/>
         </scene>
+        <!--Report Material View Controller-->
+        <scene sceneID="XZ6-OJ-zpQ">
+            <objects>
+                <viewController id="shz-OG-72Q" customClass="ReportMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyr-lJ-XQV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MALZEME RAPORLAMA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7r-bE-gay">
+                                <rect key="frame" x="0.0" y="5" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-cJ-6r5">
+                                <rect key="frame" x="67" y="39" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h7r-bE-gay" firstAttribute="trailing" secondItem="dLo-O0-16h" secondAttribute="trailing" id="bqw-yt-6J1"/>
+                            <constraint firstItem="h7r-bE-gay" firstAttribute="leading" secondItem="dLo-O0-16h" secondAttribute="leading" id="g2R-tP-Xp5"/>
+                            <constraint firstItem="h7r-bE-gay" firstAttribute="top" secondItem="eyr-lJ-XQV" secondAttribute="top" constant="5" id="t9Q-cL-qlP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dLo-O0-16h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ql-qu-Ych" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677.60000000000002" y="1362.3688155922041"/>
+        </scene>
         <!--List Material View Controller-->
         <scene sceneID="EQN-6g-JX2">
             <objects>
