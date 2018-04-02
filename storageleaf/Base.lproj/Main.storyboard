@@ -462,9 +462,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MALZEME LİSTESİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-Tg-FJV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MALZEME LİSTESİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-Tg-FJV">
                                 <rect key="frame" x="0.0" y="25" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -476,15 +475,26 @@
                                     <color key="titleColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8nD-c4-Ek2">
+                                <rect key="frame" x="8" y="308" width="359" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="bottom" secondItem="7W4-wx-s1v" secondAttribute="bottom" constant="20" id="7d7-t9-5kf"/>
+                            <constraint firstItem="8nD-c4-Ek2" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" constant="8" id="M26-UC-BXo"/>
+                            <constraint firstItem="7W4-wx-s1v" firstAttribute="top" secondItem="8nD-c4-Ek2" secondAttribute="bottom" constant="16" id="UFQ-Lk-kBP"/>
+                            <constraint firstItem="ex4-Tg-FJV" firstAttribute="trailing" secondItem="8nD-c4-Ek2" secondAttribute="trailing" constant="8" id="WUH-8a-rth"/>
                             <constraint firstItem="7W4-wx-s1v" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" id="eUv-8E-RJq"/>
+                            <constraint firstItem="8nD-c4-Ek2" firstAttribute="top" secondItem="ex4-Tg-FJV" secondAttribute="bottom" constant="16" id="h13-gd-8Pd"/>
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="7W4-wx-s1v" secondAttribute="trailing" id="w8w-Sh-uBd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H3D-kh-cxU"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8nD-c4-Ek2" id="D80-PB-fNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xK-8N-6Sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

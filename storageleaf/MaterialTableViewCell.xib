@@ -66,6 +66,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="commentLabel" destination="ruL-Of-9Pm" id="6Sq-xC-hpS"/>
+                <outlet property="malzemeIDLabel" destination="NNC-BA-n5Q" id="YQB-uz-ZRp"/>
+                <outlet property="malzemeOwnerIDLabel" destination="tHk-LY-u1h" id="0M6-OW-xvL"/>
+                <outlet property="malzemeStokAreaLabel" destination="4s0-Vg-SoR" id="MuL-D6-mgW"/>
                 <outlet property="materialImageView" destination="2Bl-70-6kg" id="ebE-ge-arE"/>
             </connections>
             <point key="canvasLocation" x="-57" y="81"/>
