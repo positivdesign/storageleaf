@@ -8,7 +8,7 @@
 
 import UIKit
 
-class saveMaterialViewController: UIViewController {
+class SaveMaterialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

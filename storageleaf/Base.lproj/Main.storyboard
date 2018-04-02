@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,9 +26,6 @@
                                     <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="lEv-y5-pXA" kind="show" id="qjS-M5-Zti"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Sc-KdX">
                                 <rect key="frame" x="71" y="418" width="288" height="48"/>
@@ -47,7 +44,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-GG-DHx">
-                                <rect key="frame" x="60" y="20" width="255" height="269"/>
+                                <rect key="frame" x="60" y="25" width="255" height="269"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,13 +53,14 @@
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="4KW-Nz-l2V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="4dL-Pv-r0K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3J-ys-sW2" secondAttribute="bottom" constant="30" id="K3V-0Q-ZJ4"/>
-                            <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="63" id="ScS-j4-Esf"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="58" id="Opp-og-7b3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="TaQ-eB-Btr"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="UeK-Mz-Pf6"/>
                             <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="ZEe-D4-wkw"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="esU-Zy-QP4"/>
+                            <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="g9Z-Zc-cam"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnv-GG-DHx" secondAttribute="trailing" constant="60" id="hcq-Qn-oE5"/>
-                            <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="mcC-79-zaZ"/>
+                            <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="mPU-zE-C36"/>
                             <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="nl5-y0-qEj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="pt2-ww-bhR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="r5h-CE-mI8"/>
@@ -74,6 +72,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="RemoveMaterialButton" destination="dbM-Sc-KdX" id="iCh-qm-WFS"/>
+                        <outlet property="listMaterialButton" destination="G3J-ys-sW2" id="aVa-cq-q03"/>
+                        <outlet property="saveMaterialButton" destination="HQa-HU-79y" id="lGj-Ji-LLg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +85,7 @@
         <!--Save Material View Controller-->
         <scene sceneID="Tos-AN-bzn">
             <objects>
-                <viewController id="lEv-y5-pXA" customClass="SaveMaterialViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SaveMaterialViewController" id="lEv-y5-pXA" customClass="SaveMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ez-hJ-3tz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +119,9 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-ML-C08">
                                 <rect key="frame" x="178" y="202" width="192" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="0un-kl-Ylv"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -125,6 +131,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="64b-dC-1ie"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="192" id="ZwC-SR-dmN"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="192" id="pee-eF-krH"/>
                                     <constraint firstAttribute="width" constant="192" id="v3L-w5-ueB"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -176,7 +183,7 @@
                             <constraint firstItem="jd0-Kr-F4Z" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" constant="67" id="A1M-yZ-Llf"/>
                             <constraint firstItem="L9c-Ie-iP8" firstAttribute="top" secondItem="rZQ-ys-fce" secondAttribute="bottom" constant="29.5" id="CNa-hy-Jbz"/>
                             <constraint firstItem="hDc-yK-OaG" firstAttribute="top" secondItem="abi-0d-Yux" secondAttribute="top" constant="5" id="Cd2-lX-FFh"/>
-                            <constraint firstItem="xUe-ML-C08" firstAttribute="leading" secondItem="rZQ-ys-fce" secondAttribute="trailing" constant="18" id="FmU-xS-ba5"/>
+                            <constraint firstItem="MH2-N3-Le1" firstAttribute="leading" secondItem="L9c-Ie-iP8" secondAttribute="trailing" constant="27" id="CqX-AZ-vu8"/>
                             <constraint firstItem="rZQ-ys-fce" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" id="GD2-fG-EWh"/>
                             <constraint firstItem="FwS-jR-nR2" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" id="HKu-DU-Xdh"/>
                             <constraint firstItem="P0d-fa-iSG" firstAttribute="top" secondItem="MH2-N3-Le1" secondAttribute="bottom" constant="18" id="NiS-FT-zb1"/>
@@ -191,13 +198,13 @@
                             <constraint firstItem="P0d-fa-iSG" firstAttribute="leading" secondItem="FwS-jR-nR2" secondAttribute="trailing" constant="20" id="ZE5-Ih-GcI"/>
                             <constraint firstItem="zT0-nQ-kv2" firstAttribute="leading" secondItem="as3-QV-uwI" secondAttribute="trailing" constant="97" id="ah1-DN-RgF"/>
                             <constraint firstItem="SMB-kr-i7a" firstAttribute="trailing" secondItem="abi-0d-Yux" secondAttribute="trailing" id="dCd-ah-pol"/>
+                            <constraint firstItem="xUe-ML-C08" firstAttribute="leading" secondItem="rZQ-ys-fce" secondAttribute="trailing" constant="18" id="fpB-MN-gTw"/>
                             <constraint firstItem="abi-0d-Yux" firstAttribute="trailing" secondItem="P0d-fa-iSG" secondAttribute="trailing" constant="5" id="goq-Ro-cqz"/>
                             <constraint firstItem="L9c-Ie-iP8" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" id="qdW-Lh-uUB"/>
                             <constraint firstItem="MH2-N3-Le1" firstAttribute="top" secondItem="xUe-ML-C08" secondAttribute="bottom" constant="18" id="rOT-dt-c99"/>
                             <constraint firstItem="rZQ-ys-fce" firstAttribute="top" secondItem="jd0-Kr-F4Z" secondAttribute="bottom" constant="75" id="t1Q-1A-ZA5"/>
                             <constraint firstItem="abi-0d-Yux" firstAttribute="trailing" secondItem="jd0-Kr-F4Z" secondAttribute="trailing" constant="68" id="uj0-Hg-5VH"/>
                             <constraint firstItem="hDc-yK-OaG" firstAttribute="trailing" secondItem="abi-0d-Yux" secondAttribute="trailing" id="vfp-Tq-EBc"/>
-                            <constraint firstItem="MH2-N3-Le1" firstAttribute="leading" secondItem="L9c-Ie-iP8" secondAttribute="trailing" constant="27" id="vvX-vq-DET"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="abi-0d-Yux"/>
                         <userDefinedRuntimeAttributes>
@@ -213,7 +220,7 @@
         <!--Delete Material View Controller-->
         <scene sceneID="cwk-wG-RZS">
             <objects>
-                <viewController id="8N6-EG-Fk9" customClass="DeleteMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeleteMaterialViewController" id="8N6-EG-Fk9" customClass="DeleteMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNj-2o-eb8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,6 +316,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d54-Ow-XrW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="O6l-PL-eTX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdR-mL-GPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,7 +325,7 @@
         <!--Report Material View Controller-->
         <scene sceneID="XZ6-OJ-zpQ">
             <objects>
-                <viewController id="shz-OG-72Q" customClass="ReportMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportMaterialViewController" id="shz-OG-72Q" customClass="ReportMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyr-lJ-XQV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -101,10 +101,10 @@
 				DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */,
 				DB4562A820715C9E00FEE0E3 /* ViewController.swift */,
 				DB4562AA20715C9E00FEE0E3 /* Main.storyboard */,
+				C846363B2072417600B024DD /* MaterialTableViewCell.xib */,
 				DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */,
 				DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */,
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
-				C846363B2072417600B024DD /* MaterialTableViewCell.xib */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
