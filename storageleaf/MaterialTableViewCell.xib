@@ -65,6 +65,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="materialImageView" destination="2Bl-70-6kg" id="ebE-ge-arE"/>
+            </connections>
             <point key="canvasLocation" x="-57" y="81"/>
         </view>
     </objects>
