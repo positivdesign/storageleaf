@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lEv-y5-pXA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,254 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-HU-79y">
+                                <rect key="frame" x="71" y="352" width="288" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Malzeme Kayıt">
+                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Sc-KdX">
+                                <rect key="frame" x="71" y="418" width="288" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Malzeme Çıkış">
+                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3J-ys-sW2">
+                                <rect key="frame" x="44" y="589" width="287" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Malzeme Listesi">
+                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-GG-DHx">
+                                <rect key="frame" x="60" y="20" width="255" height="269"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="16" id="3bZ-pe-WSi"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="4KW-Nz-l2V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="4dL-Pv-r0K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3J-ys-sW2" secondAttribute="bottom" constant="30" id="K3V-0Q-ZJ4"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="63" id="ScS-j4-Esf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="TaQ-eB-Btr"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="UeK-Mz-Pf6"/>
+                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="ZEe-D4-wkw"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="esU-Zy-QP4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnv-GG-DHx" secondAttribute="trailing" constant="60" id="hcq-Qn-oE5"/>
+                            <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="mcC-79-zaZ"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="nl5-y0-qEj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="pt2-ww-bhR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="r5h-CE-mI8"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="s2k-x5-qzF"/>
+                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="snA-rI-yBx"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="vd6-bD-14z"/>
+                            <constraint firstItem="G3J-ys-sW2" firstAttribute="top" secondItem="dbM-Sc-KdX" secondAttribute="bottom" constant="123" id="wHP-oe-c2C"/>
+                            <constraint firstItem="Rnv-GG-DHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="xHO-t6-yUN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--Save Material View Controller-->
+        <scene sceneID="Tos-AN-bzn">
+            <objects>
+                <viewController id="lEv-y5-pXA" customClass="SaveMaterialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ez-hJ-3tz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MALZEME KAYIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDc-yK-OaG">
+                                <rect key="frame" x="0.0" y="25" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storage" translatesAutoresizingMaskIntoConstraints="NO" id="jd0-Kr-F4Z">
+                                <rect key="frame" x="67" y="54" width="240" height="73"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme Sorumlusu:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-ys-fce">
+                                <rect key="frame" x="0.0" y="202" width="167" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme Numarası:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-Ie-iP8">
+                                <rect key="frame" x="0.0" y="241" width="158" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwS-jR-nR2">
+                                <rect key="frame" x="0.0" y="281" width="158" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-ML-C08">
+                                <rect key="frame" x="185" y="210" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MH2-N3-Le1">
+                                <rect key="frame" x="185" y="248" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0d-fa-iSG">
+                                <rect key="frame" x="185" y="289" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-kr-i7a">
+                                <rect key="frame" x="0.0" y="425" width="375" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Malzeme Kayıt">
+                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stok Alanı:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as3-QV-uwI">
+                                <rect key="frame" x="0.0" y="325" width="158" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zT0-nQ-kv2">
+                                <rect key="frame" x="185" y="332" width="174" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jd0-Kr-F4Z" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" constant="67" id="A1M-yZ-Llf"/>
+                            <constraint firstItem="hDc-yK-OaG" firstAttribute="top" secondItem="abi-0d-Yux" secondAttribute="top" constant="5" id="Cd2-lX-FFh"/>
+                            <constraint firstItem="jd0-Kr-F4Z" firstAttribute="top" secondItem="hDc-yK-OaG" secondAttribute="bottom" constant="8" id="OxS-55-ODA"/>
+                            <constraint firstItem="jd0-Kr-F4Z" firstAttribute="top" secondItem="hDc-yK-OaG" secondAttribute="bottom" constant="8" id="WWT-Ht-QIn"/>
+                            <constraint firstItem="hDc-yK-OaG" firstAttribute="leading" secondItem="abi-0d-Yux" secondAttribute="leading" id="Z84-AU-xYZ"/>
+                            <constraint firstItem="abi-0d-Yux" firstAttribute="trailing" secondItem="jd0-Kr-F4Z" secondAttribute="trailing" constant="68" id="uj0-Hg-5VH"/>
+                            <constraint firstItem="hDc-yK-OaG" firstAttribute="trailing" secondItem="abi-0d-Yux" secondAttribute="trailing" id="vfp-Tq-EBc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="abi-0d-Yux"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="deneme" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="deneme2" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQF-Ot-WVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="33.733133433283363"/>
+        </scene>
+        <!--Delete Material View Controller-->
+        <scene sceneID="cwk-wG-RZS">
+            <objects>
+                <viewController id="8N6-EG-Fk9" customClass="DeleteMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NNj-2o-eb8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MALZEME ÇIKIŞ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83C-Fo-wDY">
+                                <rect key="frame" x="0.0" y="25" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="storage" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-DC-b3V">
+                                <rect key="frame" x="67" y="54" width="240" height="73"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-HP-pKi">
+                                <rect key="frame" x="185" y="230" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vzm-ma-Bfp">
+                                <rect key="frame" x="185" y="268" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme Sorumlusu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR3-jY-h0e">
+                                <rect key="frame" x="0.0" y="235" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme Numarası:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJo-b4-lUm">
+                                <rect key="frame" x="0.0" y="272" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Malzeme ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-Wk-WtP">
+                                <rect key="frame" x="0.0" y="311" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMp-We-2XU">
+                                <rect key="frame" x="0.0" y="425" width="375" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Malzeme Ara">
+                                    <color key="titleColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O13-O1-czb">
+                                <rect key="frame" x="185" y="306" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="83C-Fo-wDY" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" id="7Fn-jv-fOw"/>
+                            <constraint firstItem="Uhz-DC-b3V" firstAttribute="top" secondItem="83C-Fo-wDY" secondAttribute="bottom" constant="8" id="Bg9-Ip-8qY"/>
+                            <constraint firstItem="83C-Fo-wDY" firstAttribute="trailing" secondItem="d54-Ow-XrW" secondAttribute="trailing" id="JTc-Qi-Fym"/>
+                            <constraint firstItem="83C-Fo-wDY" firstAttribute="top" secondItem="d54-Ow-XrW" secondAttribute="top" constant="5" id="au8-HM-d2F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d54-Ow-XrW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdR-mL-GPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="702.99850074962524"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_2" width="241" height="269"/>
+        <image name="storage" width="76" height="73"/>
+    </resources>
 </document>
