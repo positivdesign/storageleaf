@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78E780C47929C0C05BE5237F /* Pods_storageleaf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6709690FF871ED7AB689B35D /* Pods_storageleaf.framework */; };
+		C846363C2072417600B024DD /* MaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C846363B2072417600B024DD /* MaterialTableViewCell.xib */; };
 		DB115C4B207209680086159E /* SaveMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB115C4A207209680086159E /* SaveMaterialViewController.swift */; };
 		DB115C4D20720E4D0086159E /* DeleteMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */; };
 		DB115C5120721A5B0086159E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DB115C5020721A5B0086159E /* .gitignore */; };
@@ -24,6 +25,7 @@
 		6709690FF871ED7AB689B35D /* Pods_storageleaf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_storageleaf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95BC16D7558E812C2FA838F0 /* Pods-storageleaf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storageleaf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf.debug.xcconfig"; sourceTree = "<group>"; };
 		ABAF2B2F215858A2A850E784 /* Pods-storageleaf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storageleaf.release.xcconfig"; path = "Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf.release.xcconfig"; sourceTree = "<group>"; };
+		C846363B2072417600B024DD /* MaterialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialTableViewCell.xib; sourceTree = "<group>"; };
 		DB115C4A207209680086159E /* SaveMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMaterialViewController.swift; sourceTree = "<group>"; };
 		DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMaterialViewController.swift; sourceTree = "<group>"; };
 		DB115C5020721A5B0086159E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */,
 				DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */,
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
+				C846363B2072417600B024DD /* MaterialTableViewCell.xib */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C846363C2072417600B024DD /* MaterialTableViewCell.xib in Resources */,
 				DB115C5120721A5B0086159E /* .gitignore in Resources */,
 				DB4562B120715C9E00FEE0E3 /* LaunchScreen.storyboard in Resources */,
 				DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */,
