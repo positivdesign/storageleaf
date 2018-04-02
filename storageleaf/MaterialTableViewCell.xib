@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="800" height="202"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Bl-70-6kg">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Bl-70-6kg" userLabel="MaterialImageView">
                     <rect key="frame" x="488" y="8" width="296" height="186"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2Bl-70-6kg" secondAttribute="height" multiplier="148:93" id="cDZ-SU-nB1"/>
