@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="684" y="702.99850074962524"/>
         </scene>
-        <!--View Controller-->
+        <!--List Material View Controller-->
         <scene sceneID="EQN-6g-JX2">
             <objects>
-                <viewController id="XV6-Dm-yg4" sceneMemberID="viewController">
+                <viewController id="XV6-Dm-yg4" customClass="ListMaterialViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ydm-Pd-IJ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,8 +273,20 @@
                                 <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W4-wx-s1v">
+                                <rect key="frame" x="0.0" y="614" width="375" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Malzeme Çıkış">
+                                    <color key="titleColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H3D-kh-cxU" firstAttribute="bottom" secondItem="7W4-wx-s1v" secondAttribute="bottom" constant="20" id="7d7-t9-5kf"/>
+                            <constraint firstItem="7W4-wx-s1v" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" id="eUv-8E-RJq"/>
+                            <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="7W4-wx-s1v" secondAttribute="trailing" id="w8w-Sh-uBd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H3D-kh-cxU"/>
                     </view>
                 </viewController>

@@ -1,5 +1,5 @@
 //
-//  saveMaterialViewController.swift
+//  ListMaterialViewController.swift
 //  storageleaf
 //
 //  Created by AYDIN AYYILDIZ on 2.04.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class saveMaterialViewController: UIViewController {
+class ListMaterialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
