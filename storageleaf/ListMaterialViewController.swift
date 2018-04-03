@@ -21,7 +21,7 @@ class ListMaterialViewController: UIViewController {
 
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
-        prepareNavigatorBar()
+//        prepareNavigatorBar()
     }
     
     fileprivate func prepareTableView (){
@@ -36,12 +36,10 @@ class ListMaterialViewController: UIViewController {
         ListMaterialViewController.materialArray = [material1, material2, material1]
     }
     
-    fileprivate func prepareNavigatorBar() {
-//        navigationItem.title = "Malzeme Listesi"
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.barStyle = .blackTranslucent
-        navigationController?.navigationBar.barTintColor = .green
-    }
+//    fileprivate func prepareNavigatorBar() {
+//  
+//        
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

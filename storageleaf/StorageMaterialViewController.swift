@@ -19,7 +19,7 @@ class StorageMaterialViewController: UIViewController {
 
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
-        prepareNavigatorBar()
+      //  prepareNavigatorBar()
     }
     
     fileprivate func prepareTableView (){
@@ -29,12 +29,11 @@ class StorageMaterialViewController: UIViewController {
     }
     
     
-    fileprivate func prepareNavigatorBar() {
-//        navigationItem.title = "Stok Listesi"
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.barStyle = .blackTranslucent
-        navigationController?.navigationBar.barTintColor = .green
-    }
+//    fileprivate func prepareNavigatorBar() {
+//        navigationController?.navigationBar.tintColor = .black
+//        navigationController?.navigationBar.barStyle = .blackTranslucent
+//        navigationController?.navigationBar.barTintColor = Color.barColor
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
