@@ -6,5 +6,8 @@ target 'storageleaf' do
   use_frameworks!
 
   # Pods for storageleaf
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+
 
 end

@@ -22,6 +22,7 @@
 		DB4562AC20715C9E00FEE0E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AA20715C9E00FEE0E3 /* Main.storyboard */; };
 		DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */; };
 		DB4562B120715C9E00FEE0E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */; };
+		DB84D639207391D9007B2A60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB84D638207391D9007B2A60 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB4562B020715C9E00FEE0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB4562B220715C9E00FEE0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB84D638207391D9007B2A60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */,
 				DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */,
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
+				DB84D638207391D9007B2A60 /* GoogleService-Info.plist */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				DB4562B120715C9E00FEE0E3 /* LaunchScreen.storyboard in Resources */,
 				DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */,
 				DB4562AC20715C9E00FEE0E3 /* Main.storyboard in Resources */,
+				DB84D639207391D9007B2A60 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,9 +213,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
