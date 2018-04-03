@@ -9,11 +9,25 @@
 import UIKit
 
 class DeleteMaterialViewController: UIViewController {
+    
+    
+    @IBOutlet weak var deleteResponsibleID: UITextField!
+    
+    @IBOutlet weak var deleteMaterialNumber: UITextField!
+    
+    @IBOutlet weak var deleteMaterialID: UITextField!
+    
+    @IBOutlet weak var deleteMaterialSearchButton: UIButton!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        preparedeleteMaterialSearchButton()
+      
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +35,24 @@ class DeleteMaterialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func deleteMaterialSearchButtonAction(_ sender: Any) {
     }
-    */
-
+    
+     /////////////////////////////////////Button Sayfalar arası geçiş///////////////////////
+    
+    fileprivate func preparedeleteMaterialSearchButton(){
+        deleteMaterialSearchButton.addTarget(self, action: #selector(preparedeleteMaterialSearchButtonAction), for: .touchUpInside)
+    }
+   
+    @objc func preparedeleteMaterialSearchButtonAction() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let listMaterialView = storyboard.instantiateViewController(withIdentifier: "ListMaterialViewController") as! ListMaterialViewController
+        navigationController?.pushViewController(listMaterialView, animated: true)
+        
+    }
+ ////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
 }
