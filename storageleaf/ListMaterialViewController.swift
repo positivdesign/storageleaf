@@ -14,13 +14,13 @@ class ListMaterialViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var materialArray: [Material] = []
+    static var materialArray: [Material] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareTableView()
-        prepareMatearialList()
+        ListMaterialViewController.prepareMatearialList()
         prepareNavigatorBar()
     }
     
@@ -30,14 +30,14 @@ class ListMaterialViewController: UIViewController {
         tableView.register(UINib(nibName: "MaterialTableViewCell", bundle: nil), forCellReuseIdentifier: "MaterialTableViewCell")
     }
     
-    fileprivate func prepareMatearialList () {
+    static func prepareMatearialList () {
         let material1 = Material ( "GC46-BRAKET-06", "AATMACA1", "RA2" , "USED" , materialImage: UIImage(named:"leaf")!)
         let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
-        materialArray = [material1, material2, material1]
+        ListMaterialViewController.materialArray = [material1, material2, material1]
     }
     
     fileprivate func prepareNavigatorBar() {
-        navigationItem.title = "Malzeme Listesi"
+//        navigationItem.title = "Malzeme Listesi"
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.barTintColor = .green
@@ -68,7 +68,7 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell: MaterialTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MaterialTableViewCell") as? MaterialTableViewCell else {
             return UITableViewCell()
         }
-        let materialAtIndex = materialArray[indexPath.row]
+        let materialAtIndex = ListMaterialViewController.materialArray[indexPath.row]
         
         if let malzemeResmi = materialAtIndex.materialImage {
             cell.materialImageView.image = malzemeResmi
@@ -84,9 +84,7 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return materialArray.count
+        return ListMaterialViewController.materialArray.count
     }
 }
-
-
 
