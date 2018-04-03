@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let nav1 = UINavigationController()
+        let nav2 = UINavigationController()
+
+        let storyBoard = UIStoryboard(name:"Main" , bundle: nil)
+        
+        let listMaterial = storyBoard.instantiateViewController(withIdentifier: "ListMaterialViewController") as! ListMaterialViewController
+        let storageMaterial = storyBoard.instantiateViewController(withIdentifier: "StorageMaterialViewController") as! StorageMaterialViewController
+        nav1.viewControllers = [listMaterial]
+        nav2.viewControllers = [storageMaterial]
+        self.window!.rootViewController = nav2
+        self.window?.makeKeyAndVisible()
+        // Override point for customization after application launch.
         return true
     }
 
