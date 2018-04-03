@@ -24,6 +24,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     @IBOutlet weak var saveMaterialSaveButton: UIButton!
     
     static let storageAreNames = ["RA1","RA2","RA3","RA4","RB1","RB2","RB3","RB4"]
+    var fireBaseList = ["saveMaterialRespID", "saveMaterialNumber","saveMaterialID","saveStorageArea"]
     
     
     override func viewDidLoad() {
@@ -31,12 +32,13 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
 
         ref = Database.database().reference()
         
+       
         
         
         saveStorageArea.delegate = self
         saveStorageArea.dataSource = self
         
-        
+
         
      
     }
@@ -53,8 +55,12 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
 
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
-        ref?.child("material").childByAutoId().setValue("AYDIN")
+       
+        let name: NSString =  SaveMaterialViewController.storageAreNames[saveStorageArea.selectedRow(inComponent: 0)] as NSString
         
+        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name])
+       
+
     }
     
     
@@ -72,7 +78,8 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
+     let selectedValue = SaveMaterialViewController.storageAreNames[row] as String
+      print(selectedValue)
     }
   /////////////////////////////////////////////////////////////////
     
