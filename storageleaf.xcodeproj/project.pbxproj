@@ -98,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				DB4562A620715C9E00FEE0E3 /* AppDelegate.swift */,
+				C85075D22072580700F452DA /* Material.swift */,
+				C846363F20724EFA00B024DD /* MaterialTableViewCell.swift */,
 				DB115C5620724A1D0086159E /* StorageMaterialViewController.swift */,
 				DB115C522072386E0086159E /* ListMaterialViewController.swift */,
 				DB115C5420723A430086159E /* ReportMaterialViewController.swift */,
@@ -105,12 +107,10 @@
 				DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */,
 				DB4562A820715C9E00FEE0E3 /* ViewController.swift */,
 				DB4562AA20715C9E00FEE0E3 /* Main.storyboard */,
-				C85075D22072580700F452DA /* Material.swift */,
+				C846363B2072417600B024DD /* MaterialTableViewCell.xib */,
 				DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */,
 				DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */,
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
-				C846363B2072417600B024DD /* MaterialTableViewCell.xib */,
-				C846363F20724EFA00B024DD /* MaterialTableViewCell.swift */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
