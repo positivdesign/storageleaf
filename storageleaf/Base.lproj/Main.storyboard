@@ -15,32 +15,35 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="storageleaf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-HU-79y">
-                                <rect key="frame" x="71" y="352" width="288" height="48"/>
+                                <rect key="frame" x="20" y="352" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Malzeme Kayıt">
-                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Sc-KdX">
-                                <rect key="frame" x="71" y="418" width="288" height="48"/>
+                                <rect key="frame" x="20" y="418" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Malzeme Çıkış">
-                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.76839983463287354" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3J-ys-sW2">
-                                <rect key="frame" x="44" y="589" width="287" height="48"/>
+                                <rect key="frame" x="20" y="589" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Malzeme Listesi">
-                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -50,24 +53,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="16" id="3bZ-pe-WSi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="20" id="3bZ-pe-WSi"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="4KW-Nz-l2V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="4dL-Pv-r0K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="20" id="4dL-Pv-r0K"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fig-B0-fzz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3J-ys-sW2" secondAttribute="bottom" constant="30" id="K3V-0Q-ZJ4"/>
                             <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="58" id="Opp-og-7b3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="44" id="TaQ-eB-Btr"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="UeK-Mz-Pf6"/>
-                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="ZEe-D4-wkw"/>
-                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="esU-Zy-QP4"/>
+                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZEe-D4-wkw"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="esU-Zy-QP4"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="g9Z-Zc-cam"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnv-GG-DHx" secondAttribute="trailing" constant="60" id="hcq-Qn-oE5"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="mPU-zE-C36"/>
-                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="nl5-y0-qEj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="pt2-ww-bhR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="16" id="r5h-CE-mI8"/>
-                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="s2k-x5-qzF"/>
-                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="snA-rI-yBx"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="vd6-bD-14z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="20" id="vhx-E8-hgc"/>
                             <constraint firstItem="G3J-ys-sW2" firstAttribute="top" secondItem="dbM-Sc-KdX" secondAttribute="bottom" constant="123" id="wHP-oe-c2C"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="xHO-t6-yUN"/>
                         </constraints>

@@ -55,12 +55,14 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
 
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
-       
+       /////////////////////////////firebase save///////////////////////////////
+     
+        
         let name: NSString =  SaveMaterialViewController.storageAreNames[saveStorageArea.selectedRow(inComponent: 0)] as NSString
         
         ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name])
        
-
+///////////////////////////////////////////////////////////////////////////////////
     }
     
     
@@ -78,7 +80,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-     let selectedValue = SaveMaterialViewController.storageAreNames[row] as String
+     let selectedValue = SaveMaterialViewController.storageAreNames[row] as NSString
       print(selectedValue)
     }
   /////////////////////////////////////////////////////////////////
