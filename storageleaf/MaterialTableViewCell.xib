@@ -13,12 +13,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MovieTableViewCell" customModule="storageleaf" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MaterialTableViewCell" customModule="storageleaf" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="800" height="202"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Bl-70-6kg" userLabel="MaterialImageView">
-                    <rect key="frame" x="488" y="8" width="296" height="186"/>
+                    <rect key="frame" x="496" y="8" width="296" height="186"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2Bl-70-6kg" secondAttribute="height" multiplier="148:93" id="cDZ-SU-nB1"/>
                     </constraints>
@@ -58,7 +58,7 @@
                 <constraint firstItem="o7q-GY-A9V" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="4vY-WB-2n1"/>
                 <constraint firstAttribute="leading" secondItem="o7q-GY-A9V" secondAttribute="trailing" constant="-480" id="FPn-n9-NnT"/>
                 <constraint firstItem="o7q-GY-A9V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="PsJ-mT-IgE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2Bl-70-6kg" secondAttribute="trailing" constant="16" id="ZVA-Rs-if5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2Bl-70-6kg" secondAttribute="trailing" constant="8" id="ZVA-Rs-if5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2Bl-70-6kg" secondAttribute="bottom" constant="8" id="mlH-tF-de2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="o7q-GY-A9V" secondAttribute="bottom" constant="8" id="r8s-6c-wAW"/>
                 <constraint firstItem="2Bl-70-6kg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="rMR-h2-DGw"/>
