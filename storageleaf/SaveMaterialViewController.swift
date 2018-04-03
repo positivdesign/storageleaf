@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate   {
+    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var saveMaterialRespID: UITextField!
     
@@ -26,6 +29,9 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref = Database.database().reference()
+        
+        
         
         saveStorageArea.delegate = self
         saveStorageArea.dataSource = self
@@ -47,7 +53,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
 
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
-        
+        ref?.child("material").childByAutoId().setValue("AYDIN")
         
     }
     
