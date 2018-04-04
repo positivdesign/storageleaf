@@ -13,6 +13,9 @@ class DeleteMaterialViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+    //firebaseden gelen datalar posData altına kaydedilecek
+    var postData = [String]()
+    
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
     @IBOutlet weak var deleteMaterialNumber: UITextField!
@@ -29,9 +32,22 @@ class DeleteMaterialViewController: UIViewController {
         
         //firebase reference
         ref = Database.database().reference()
-
+        
+  
+        
+        self.postData.append("")
+        print(postData)
+        
+        
+        
+        
+        
+        
+        
+        
         preparedeleteMaterialSearchButton()
       
+        
     
     }
 
