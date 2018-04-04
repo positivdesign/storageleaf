@@ -36,11 +36,6 @@ class ListMaterialViewController: UIViewController {
         ListMaterialViewController.materialArray = [material1, material2, material1]
     }
     
-//    fileprivate func prepareNavigatorBar() {
-//  
-//        
-//    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
