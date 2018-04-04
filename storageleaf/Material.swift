@@ -19,13 +19,13 @@ class Material: Mappable {
     var materialNumber: String?
     var materialImage: UIImage?
     
-    init (_ malzemeID: String, _ malzemeOwnerID: String, _ malzemeStokID: String, _ materialNumber: String, materialImage: UIImage?) {
+    init (_ malzemeID: String?, _ malzemeOwnerID: String?, _ malzemeStokID: String?, _ materialNumber: String?) {
         
         self.malzemeID = malzemeID
         self.malzemeOwnerID = malzemeOwnerID
         self.malzemeStokID = malzemeStokID
         self.materialNumber = materialNumber
-        self.materialImage = materialImage
+        //self.materialImage = materialImage
     }
     
     required init?(map: Map) {

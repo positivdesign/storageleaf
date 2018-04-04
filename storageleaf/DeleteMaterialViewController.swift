@@ -12,8 +12,9 @@ import FirebaseDatabase
 class DeleteMaterialViewController: UIViewController {
     
     var ref: DatabaseReference!
+    var myMateriallist = [Material]()
     
-    static var denemeMalzeme: [Material] = []
+    //static var denemeMalzeme: [Material] = []
     
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
@@ -38,10 +39,20 @@ class DeleteMaterialViewController: UIViewController {
             //print(fireBaseData.value)
             let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
             print(fireBasePostData)
-   
             
-//            print(DeleteMaterialViewController.denemeMalzeme)
-//
+            
+            let materialIDD = fireBasePostData["materialID"]
+            let materialNumberr = fireBasePostData["materialNumber"]
+            let materialResponsibleIDD = fireBasePostData["materialResponsibleID"]
+            let storageAreaa = fireBasePostData["storageArea"]
+            
+            let materials = Material(materialIDD as? String, materialResponsibleIDD as? String, storageAreaa as? String, materialNumberr as? String)
+            
+           self.myMateriallist.append(materials)
+            print(materialIDD)
+    
+            
+            
 //            let deneme = fireBaseData.value as? String
 //
 //            print(deneme)

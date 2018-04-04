@@ -11,17 +11,21 @@ import FirebaseDatabase
 
 
 class ListMaterialViewController: UIViewController {
+      var ref: DatabaseReference!
     
     
     @IBOutlet weak var tableView: UITableView!
     
-    static var materialArray: [Material] = []
+   static var materialArray: [Material] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //firebase reference
+        ref = Database.database().reference()
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
+    
 
     }
     
@@ -32,11 +36,25 @@ class ListMaterialViewController: UIViewController {
     }
     
     static func prepareMatearialList () {
-//        let material1 = Material ( "GC46-BRAKET-06", "AATMACA1", "RA2" , "USED" , materialImage: UIImage(named:"leaf")!)
-//        let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
-        
+        let material1 = Material ( "GC46-BRAKET-05", "AATMACA1", "RA2" , "USED")
+      // let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
+      // let material3 = Material(, <#T##malzemeOwnerID: String##String#>, <#T##malzemeStokID: String##String#>, <#T##materialNumber: String##String#>, materialImage: <#T##UIImage?#>)
     
-        ListMaterialViewController.materialArray = []
+
+        
+          ListMaterialViewController.materialArray = [material1]
+        
+//        if let searchResponse2 = response.result.value {// response sonuçlarını al
+//            // guard let movies = self.plotLabel else {
+//            //                   // self.movieArray.removeAll()
+//            self.plotLabel.text = searchResponse2.plot //plotlabel textini search response.plotuna eşitle
+//            self.directorLabel.text = searchResponse2.director//asenkron fonksiyonların içine self yazılması gerekiyor.
+//            return
+        
+      
+        
+        
+       
         
   
     }
@@ -85,4 +103,3 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
         return ListMaterialViewController.materialArray.count
     }
 }
-
