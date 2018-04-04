@@ -17,6 +17,9 @@ class ListMaterialViewController: UIViewController {
     
     var materialArray: [Material] = []
     
+    var ref: DatabaseReference!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,8 @@ class ListMaterialViewController: UIViewController {
         materialArray = []
     }
     
+    
+    
     fileprivate func prepareTableView (){
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,6 +42,8 @@ class ListMaterialViewController: UIViewController {
     }
     
     fileprivate func prepareMatearialList () {
+        
+        ref = Database.database().reference()
         
         let childRef = Database.database().reference(withPath: "material")
         
@@ -106,6 +113,24 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+           
+            materialArray.remove(at: indexPath.row) //Remove the selected name from array used in TableView that is displayed in cell
+            
+            tableView.deleteRows(at: [indexPath], with: .fade) // TableView Animation
+
+            
+            ref?.child("material").childByAutoId().removeValue() // remove the child referred using id from database
+            
+            materialArray.remove(at: indexPath.row) // removing selected if from id array locally
+            
+            self.tableView.reloadData()
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -30,34 +30,6 @@ class DeleteMaterialViewController: UIViewController {
         ref = Database.database().reference()
 
         preparedeleteMaterialSearchButton()
-      
-//        // READ DENEME
-//        ref.observe(.value, with: { fireBaseData in
-//            //print(fireBaseData.value)
-//            let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
-//            print(fireBasePostData)
-//            
-//            var newItems: [Material] = []
-//            
-//            for item in fireBaseData.children {
-//                // 4
-//                let groceryItem = GroceryItem(fireBaseData: item as! FIRDataSnapshot)
-//                newItems.append(groceryItem)
-//            }
-//            
-//            self.items = newItems
-//            self.tableView.reloadData()
-//
-//            })
-        
-        
-   
-            
-//            print(DeleteMaterialViewController.denemeMalzeme)
-//
-//            let deneme = fireBaseData.value as? String
-//
-//            print(deneme)
     
     
     }
