@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DeleteMaterialViewController: UIViewController {
     
+    var ref: DatabaseReference!
     
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
@@ -24,6 +26,9 @@ class DeleteMaterialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //firebase reference
+        ref = Database.database().reference()
 
         preparedeleteMaterialSearchButton()
       
