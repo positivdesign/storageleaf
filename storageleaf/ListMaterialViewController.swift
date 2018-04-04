@@ -26,6 +26,10 @@ class ListMaterialViewController: UIViewController {
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        materialArray = []
+    }
+    
     fileprivate func prepareTableView (){
         tableView.delegate = self
         tableView.dataSource = self
