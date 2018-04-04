@@ -17,11 +17,52 @@ class ListMaterialViewController: UIViewController {
     
     static var materialArray: [Material] = []
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
+        ref = Database.database().reference()
+
+        
+    
+        let childRef = Database.database().reference(withPath: "material")
+    
+        
+//
+        // READ DENEME
+        childRef.observe(.value, with: { fireBaseData in
+            
+        let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
+        print(fireBasePostData)
+
+        let snapshotValue = fireBaseData.value as! NSDictionary
+            
+            
+            for item in snapshotValue {
+                let val = item.value as! NSDictionary
+                let matID = val["materialID"] as! String
+                let matNum = val["materialNumber"] as! String
+                let matResp = val["materialResponsibleID"] as! String
+                let matStor = val["storageArea"] as! String
+
+                let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
+                
+//                if !(ListMaterialViewController.materialArray.index(where: { $0 === newItem }) != nil) {
+                    ListMaterialViewController.materialArray.append(newItem)
+//                }
+            }
+            
+            self.tableView.reloadData()
+        })
+        
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
+       
+        
 
     }
     
@@ -36,7 +77,7 @@ class ListMaterialViewController: UIViewController {
 //        let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
         
     
-        ListMaterialViewController.materialArray = []
+//        ListMaterialViewController.materialArray =[newIte]
         
   
     }
