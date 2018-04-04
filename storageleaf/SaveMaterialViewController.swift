@@ -39,7 +39,9 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
         saveStorageArea.dataSource = self
         
 
-        
+ 
+            
+
      
     }
     
@@ -63,6 +65,8 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
         ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name])
        
 ///////////////////////////////////////////////////////////////////////////////////
+        
+
     }
     
     

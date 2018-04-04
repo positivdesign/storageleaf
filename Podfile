@@ -8,6 +8,6 @@ target 'storageleaf' do
   # Pods for storageleaf
 pod 'Firebase/Core'
 pod 'Firebase/Database'
-
+pod 'ObjectMapper', '~> 3.1'
 
 end

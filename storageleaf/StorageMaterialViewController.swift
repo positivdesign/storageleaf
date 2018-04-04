@@ -76,7 +76,7 @@ extension StorageMaterialViewController: UITableViewDelegate, UITableViewDataSou
         cell.malzemeIDLabel.text = materialAtIndex.malzemeID
         cell.malzemeOwnerIDLabel.text = materialAtIndex.malzemeOwnerID
         cell.malzemeStokAreaLabel.text = materialAtIndex.malzemeStokID
-        cell.commentLabel.text = materialAtIndex.comment
+        cell.commentLabel.text = materialAtIndex.materialNumber
         
         return cell
         

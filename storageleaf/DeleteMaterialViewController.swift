@@ -32,6 +32,13 @@ class DeleteMaterialViewController: UIViewController {
 
         preparedeleteMaterialSearchButton()
       
+        // READ DENEME
+        ref.observe(.value, with: { fireBaseData in
+            //print(fireBaseData.value)
+            let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
+            print(fireBasePostData)
+            
+        })
     
     }
 
