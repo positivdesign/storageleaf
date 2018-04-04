@@ -7,19 +7,22 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 
 
 class StorageMaterialViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var materialArray: [Material] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareTableView()
-        ListMaterialViewController.prepareMatearialList()
-        self.tableView.reloadData()
+        
+        prepareMatearialList()
+        
     }
     
     fileprivate func prepareTableView (){
@@ -27,6 +30,36 @@ class StorageMaterialViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MaterialTableViewCell", bundle: nil), forCellReuseIdentifier: "MaterialTableViewCell")
     }
+    
+    fileprivate func prepareMatearialList () {
+        
+        let childRef = Database.database().reference(withPath: "material")
+        
+        childRef.observe(.value, with: { fireBaseData in
+            
+            let snapshotValue = fireBaseData.value as! NSDictionary
+            
+            
+            for item in snapshotValue {
+                
+                let val = item.value as! NSDictionary
+                let matID = val["materialID"] as! String
+                let matNum = val["materialNumber"] as! String
+                let matResp = val["materialResponsibleID"] as! String
+                let matStor = val["storageArea"] as! String
+                
+                let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
+                
+                self.materialArray.append(newItem)
+                
+                self.tableView.reloadData()
+                
+            }
+            
+        } )
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,7 +86,7 @@ extension StorageMaterialViewController: UITableViewDelegate, UITableViewDataSou
         guard let cell: MaterialTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MaterialTableViewCell") as? MaterialTableViewCell else {
             return UITableViewCell()
         }
-        let materialAtIndex = ListMaterialViewController.materialArray[indexPath.row]
+        let materialAtIndex = materialArray[indexPath.row]
         
         if let malzemeResmi = materialAtIndex.materialImage {
             cell.materialImageView.image = malzemeResmi
@@ -69,7 +102,7 @@ extension StorageMaterialViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ListMaterialViewController.materialArray.count
+        return materialArray.count
     }
 }
 
