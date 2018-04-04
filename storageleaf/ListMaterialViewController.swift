@@ -21,47 +21,12 @@ class ListMaterialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        
-        
-        ref = Database.database().reference()
-
-        
-    
-        let childRef = Database.database().reference(withPath: "material")
-    
-        
-//
-        // READ DENEME
-        childRef.observe(.value, with: { fireBaseData in
-            
-        let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
-        print(fireBasePostData)
-
-        let snapshotValue = fireBaseData.value as! NSDictionary
-            
-            
-            for item in snapshotValue {
-                let val = item.value as! NSDictionary
-                let matID = val["materialID"] as! String
-                let matNum = val["materialNumber"] as! String
-                let matResp = val["materialResponsibleID"] as! String
-                let matStor = val["storageArea"] as! String
-
-                let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
-                
-//                if !(ListMaterialViewController.materialArray.index(where: { $0 === newItem }) != nil) {
-                    ListMaterialViewController.materialArray.append(newItem)
-//                }
-            }
-            
-            self.tableView.reloadData()
-        })
+        ListMaterialViewController.prepareMatearialList()
         
         prepareTableView()
-        ListMaterialViewController.prepareMatearialList()
-       
+        
+        
         
 
     }
@@ -73,14 +38,38 @@ class ListMaterialViewController: UIViewController {
     }
     
     static func prepareMatearialList () {
-//        let material1 = Material ( "GC46-BRAKET-06", "AATMACA1", "RA2" , "USED" , materialImage: UIImage(named:"leaf")!)
-//        let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
         
-    
-//        ListMaterialViewController.materialArray =[newIte]
+        let childRef = Database.database().reference(withPath: "material")
         
-  
+        childRef.observe(.value, with: { fireBaseData in
+            
+        let snapshotValue = fireBaseData.value as! NSDictionary
+        
+        
+        for item in snapshotValue {
+            
+            let val = item.value as! NSDictionary
+            let matID = val["materialID"] as! String
+            let matNum = val["materialNumber"] as! String
+            let matResp = val["materialResponsibleID"] as! String
+            let matStor = val["storageArea"] as! String
+            
+            let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
+            
+            //          if !(ListMaterialViewController.materialArray.index(where: { $0 === newItem }) != nil) {
+            ListMaterialViewController.materialArray.append(newItem)
+            
+            //          }
+            
+        }
+//      self.tableView.reloadData()
+    } )
+        
+        
+        
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

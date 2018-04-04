@@ -19,8 +19,7 @@ class StorageMaterialViewController: UIViewController {
 
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
-//        prepareNavigatorBar()
-//        prepareForSegue(segue: <#UIStoryboardSegue#>)
+        self.tableView.reloadData()
     }
     
     fileprivate func prepareTableView (){
@@ -28,19 +27,6 @@ class StorageMaterialViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MaterialTableViewCell", bundle: nil), forCellReuseIdentifier: "MaterialTableViewCell")
     }
-    
-    
-//    fileprivate func prepareNavigatorBar() {
-//        navigationController?.navigationBar.tintColor = .black
-//        navigationController?.navigationBar.barStyle = .blackTranslucent
-//        navigationController?.navigationBar.barTintColor = Color.barColor
-//    }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let backItem = UIBarButtonItem()
-//        backItem.title = "Something Else"
-//        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
