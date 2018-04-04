@@ -85,6 +85,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0bi-bx-tzJ">
+                        <barButtonItem key="backBarButtonItem" title="Geri" id="OJe-n1-3Na"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="RemoveMaterialButton" destination="dbM-Sc-KdX" id="iCh-qm-WFS"/>
                         <outlet property="listMaterialButton" destination="G3J-ys-sW2" id="aVa-cq-q03"/>
@@ -342,7 +345,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d54-Ow-XrW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O6l-PL-eTX"/>
+                    <navigationItem key="navigationItem" id="O6l-PL-eTX">
+                        <barButtonItem key="backBarButtonItem" title="Geri" id="GYV-w5-KcP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="deleteMaterialID" destination="O13-O1-czb" id="5af-Fc-Bh9"/>
                         <outlet property="deleteMaterialNumber" destination="Vzm-ma-Bfp" id="DJo-u2-YSI"/>
@@ -480,6 +485,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dLo-O0-16h"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ydV-2G-WeS">
+                        <barButtonItem key="backBarButtonItem" title="Geri" id="IAm-E7-jCa"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="reportMaterailReportButton" destination="To7-ec-PGn" id="jNJ-Gh-YGS"/>
                         <outlet property="reportMaterialID" destination="qBE-Ke-9AH" id="FQK-aJ-FDo"/>
