@@ -13,6 +13,8 @@ class DeleteMaterialViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+    static var denemeMalzeme: [Material] = []
+    
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
     @IBOutlet weak var deleteMaterialNumber: UITextField!
@@ -20,7 +22,6 @@ class DeleteMaterialViewController: UIViewController {
     @IBOutlet weak var deleteMaterialID: UITextField!
     
     @IBOutlet weak var deleteMaterialSearchButton: UIButton!
-    
     
     
 
@@ -37,7 +38,13 @@ class DeleteMaterialViewController: UIViewController {
             //print(fireBaseData.value)
             let fireBasePostData = fireBaseData.value as? [String: AnyObject] ?? [:]
             print(fireBasePostData)
+   
             
+//            print(DeleteMaterialViewController.denemeMalzeme)
+//
+//            let deneme = fireBaseData.value as? String
+//
+//            print(deneme)
         })
     
     }

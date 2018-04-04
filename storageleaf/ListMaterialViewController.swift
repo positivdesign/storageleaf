@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 
 class ListMaterialViewController: UIViewController {
@@ -21,7 +22,7 @@ class ListMaterialViewController: UIViewController {
 
         prepareTableView()
         ListMaterialViewController.prepareMatearialList()
-//        prepareNavigatorBar()
+
     }
     
     fileprivate func prepareTableView (){
@@ -31,9 +32,13 @@ class ListMaterialViewController: UIViewController {
     }
     
     static func prepareMatearialList () {
-        let material1 = Material ( "GC46-BRAKET-06", "AATMACA1", "RA2" , "USED" , materialImage: UIImage(named:"leaf")!)
-        let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
-        ListMaterialViewController.materialArray = [material1, material2, material1]
+//        let material1 = Material ( "GC46-BRAKET-06", "AATMACA1", "RA2" , "USED" , materialImage: UIImage(named:"leaf")!)
+//        let material2 = Material ( "GC46-BRAKET-05", "AAYYILDIZ", "RA1" , "NEW" , materialImage: UIImage(named:"leaf")!)
+        
+    
+        ListMaterialViewController.materialArray = []
+        
+  
     }
     
     override func didReceiveMemoryWarning() {

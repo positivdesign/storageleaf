@@ -8,14 +8,6 @@
 
 import UIKit
 import ObjectMapper
-
-
-    
-    var materials: [Material]?
-    var materialID: String?
-    var materialNumber: String?
-    var materialResponsibleID: String?
-    var storageArea: String?
     
 
 
