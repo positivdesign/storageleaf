@@ -12,8 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var saveMaterialButton: UIButton!
     @IBOutlet weak var RemoveMaterialButton: UIButton!
-    @IBOutlet weak var listMaterialButton: UIButton!
-    
+  
     
     override func viewDidLoad() {
         
@@ -22,7 +21,6 @@ class ViewController: UIViewController {
         
         preparesaveMaterialButton()
         prepareRemoveMaterialButton()
-        preparelistMaterialButton()
         prepareNavigatorBar()
      
     }
@@ -40,9 +38,7 @@ class ViewController: UIViewController {
         saveMaterialButton.addTarget(self, action: #selector(saveMaterialButtonAction), for: .touchUpInside)
     }
         
-    fileprivate func preparelistMaterialButton(){
-        listMaterialButton.addTarget(self, action: #selector(listMaterialButtonAction), for: .touchUpInside)
-    }
+   
     
     fileprivate func prepareNavigatorBar() {
         navigationItem.title = "StorageLeaf"
@@ -62,13 +58,7 @@ class ViewController: UIViewController {
     }
     
     
-    @objc func listMaterialButtonAction() {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let listMaterialView = storyboard.instantiateViewController(withIdentifier: "ReportMaterialViewController") as! ReportMaterialViewController
-        navigationController?.pushViewController(listMaterialView, animated: true)
-        
-    }
+
     
     
     

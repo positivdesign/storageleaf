@@ -48,18 +48,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="24"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3J-ys-sW2">
-                                <rect key="frame" x="20" y="589" width="335" height="48"/>
-                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Malzeme Listesi">
-                                    <color key="titleColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-GG-DHx">
                                 <rect key="frame" x="60" y="25" width="255" height="269"/>
                             </imageView>
@@ -68,19 +56,15 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="20" id="3bZ-pe-WSi"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="4KW-Nz-l2V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3J-ys-sW2" secondAttribute="trailing" constant="20" id="4dL-Pv-r0K"/>
                             <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fig-B0-fzz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3J-ys-sW2" secondAttribute="bottom" constant="30" id="K3V-0Q-ZJ4"/>
                             <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="58" id="Opp-og-7b3"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="UeK-Mz-Pf6"/>
-                            <constraint firstItem="G3J-ys-sW2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZEe-D4-wkw"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="esU-Zy-QP4"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="g9Z-Zc-cam"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnv-GG-DHx" secondAttribute="trailing" constant="60" id="hcq-Qn-oE5"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="mPU-zE-C36"/>
                             <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="vd6-bD-14z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="20" id="vhx-E8-hgc"/>
-                            <constraint firstItem="G3J-ys-sW2" firstAttribute="top" secondItem="dbM-Sc-KdX" secondAttribute="bottom" constant="123" id="wHP-oe-c2C"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="xHO-t6-yUN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,7 +74,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="RemoveMaterialButton" destination="dbM-Sc-KdX" id="iCh-qm-WFS"/>
-                        <outlet property="listMaterialButton" destination="G3J-ys-sW2" id="aVa-cq-q03"/>
                         <outlet property="saveMaterialButton" destination="HQa-HU-79y" id="lGj-Ji-LLg"/>
                     </connections>
                 </viewController>
