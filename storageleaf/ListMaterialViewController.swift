@@ -65,9 +65,10 @@ class ListMaterialViewController: UIViewController {
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
             let postID = "-L9G8P9_u-zS3lycwx30"
+        
             
-            if DeleteMaterialViewController.materialIDText == matID &&
-                DeleteMaterialViewController.resIDText == matResp &&
+            if DeleteMaterialViewController.materialIDText == matID ||
+                DeleteMaterialViewController.resIDText == matResp ||
             DeleteMaterialViewController.materialNumberText == matNum {
                 
                 let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))

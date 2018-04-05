@@ -50,6 +50,8 @@ class DeleteMaterialViewController: UIViewController {
         DeleteMaterialViewController.materialIDText = deleteMaterialID.text
         DeleteMaterialViewController.materialNumberText = deleteMaterialNumber.text
         DeleteMaterialViewController.resIDText = deleteResponsibleID.text
+        
+        print(DeleteMaterialViewController.materialIDText,DeleteMaterialViewController.materialNumberText,DeleteMaterialViewController.resIDText )
     }
     
      /////////////////////////////////////Button Sayfalar arası geçiş///////////////////////
