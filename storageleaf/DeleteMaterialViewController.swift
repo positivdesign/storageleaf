@@ -9,9 +9,15 @@
 import UIKit
 import FirebaseDatabase
 
-class DeleteMaterialViewController: UIViewController {
+class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
     var ref: DatabaseReference!
+    
+    static var resIDText: String?
+    static var materialNumberText: String?
+    static var materialIDText: String?
+    static var materialStorageText: String?
+    
     
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
@@ -21,16 +27,29 @@ class DeleteMaterialViewController: UIViewController {
     
     @IBOutlet weak var deleteMaterialSearchButton: UIButton!
     
+    @IBOutlet weak var switchDeleteSearchButton: UISwitch!
     
-
+    @IBOutlet weak var pickerDeleteMaterial: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //firebase reference
+
+        
+        
+        pickerDeleteMaterial.delegate = self
+        pickerDeleteMaterial.dataSource = self
+///picker için default hidden fonksiyonu tanımlandı
+        pickerDeleteIsHidden()
+
+
+        ///firebase reference
         ref = Database.database().reference()
 
+        //sayfalar arası geçiş button
         preparedeleteMaterialSearchButton()
-    
+        
+   
     
     }
 
@@ -39,7 +58,58 @@ class DeleteMaterialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func pickerDeleteMaterialAction(_ sender: Any) {
+        
+        if switchDeleteSearchButton.isOn {
+            
+            pickerDeleteMaterial.isHidden = false
+        }
+        else {
+            
+            pickerDeleteMaterial.isHidden = true
+        }
+        
+    }
+    
+    
+    func pickerDeleteIsHidden(){
+         pickerDeleteMaterial.isHidden = true
+    }
+    ///////////////////////////////Picker View İle ilgili
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return SaveMaterialViewController.storageAreNames.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return SaveMaterialViewController.storageAreNames[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    /////////////////////////////////////////////////////////////////
+    
+    
+    
     @IBAction func deleteMaterialSearchButtonAction(_ sender: Any) {
+        
+        DeleteMaterialViewController.materialIDText = deleteMaterialID.text
+        DeleteMaterialViewController.materialNumberText = deleteMaterialNumber.text
+        DeleteMaterialViewController.resIDText = deleteResponsibleID.text
+        
+        if pickerDeleteMaterial.isHidden == true {
+            DeleteMaterialViewController.materialStorageText = ""
+        } else {
+            DeleteMaterialViewController.materialStorageText = SaveMaterialViewController.storageAreNames[pickerDeleteMaterial.selectedRow(inComponent: 0)]
+            
+        }
+        
+        print(DeleteMaterialViewController.materialIDText,DeleteMaterialViewController.materialNumberText,DeleteMaterialViewController.resIDText,DeleteMaterialViewController.materialStorageText )
     }
     
      /////////////////////////////////////Button Sayfalar arası geçiş///////////////////////

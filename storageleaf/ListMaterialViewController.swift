@@ -12,11 +12,13 @@ import FirebaseDatabase
 
 class ListMaterialViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
+
+
     
     static var materialArray: [Material] = []
     
+
     var ref: DatabaseReference!
 
     
@@ -24,16 +26,10 @@ class ListMaterialViewController: UIViewController {
         super.viewDidLoad()
         
         prepareMatearialList()
-        
         prepareTableView()
 
     }
     
-//    tablo elemanlarını sayfadan çıkınca sıfırlamak için
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        materialArray = []
-//    }
 
     fileprivate func prepareTableView (){
         tableView.delegate = self
@@ -42,6 +38,8 @@ class ListMaterialViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    
+    //firebaseden data çekme
     fileprivate func prepareMatearialList () {
         
 //        firebase üzerinden post data çekiliyor
@@ -52,11 +50,10 @@ class ListMaterialViewController: UIViewController {
         
         childRef.observe(.value, with: { fireBaseData in
             
-            let snapshotValue = fireBaseData.value as? NSDictionary ?? [:] // nsdictionary denilince daha düzenli bir yapıda getiriyor.
+
+        let snapshotValue = fireBaseData.value as? NSDictionary ?? [:] // nsdictionary denilince daha düzenli bir yapıda getiriyor.
             
-        
-//             gelen her bir dizi elemanını atma yapıyor.
-            
+
         for item in snapshotValue {
             let postID = item.key as! String
             let val = item.value as! NSDictionary
@@ -64,26 +61,59 @@ class ListMaterialViewController: UIViewController {
             let matNum = val["materialNumber"] as! String
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
+
+            // TODO: FIX ME
             
-            let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
-            
-            var found = false
-            for material in ListMaterialViewController.materialArray {
-                if material.postID == newItem.postID {
-                    found = true
-                    break
+            if DeleteMaterialViewController.materialIDText == matID ||
+                DeleteMaterialViewController.resIDText == matResp ||
+            DeleteMaterialViewController.materialNumberText == matNum ||
+        DeleteMaterialViewController.materialStorageText == matStor {
+                
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                
+                var found = false
+                for material in ListMaterialViewController.materialArray {
+                    if material.postID == newItem.postID {
+                        found = true
+                        break
+                    }
                 }
-            }
-            if !found {
-                ListMaterialViewController.materialArray.append(newItem)
+                if !found {
+                    
+                    Constants.shared.getMaterials()
+                    ListMaterialViewController.materialArray.append(newItem)
+                }
+                
+                self.tableView.reloadData()
+                
             }
             
-            self.tableView.reloadData()
+            if DeleteMaterialViewController.materialIDText == "" &&
+                DeleteMaterialViewController.resIDText == "" &&
+                DeleteMaterialViewController.materialNumberText == "" &&
+                DeleteMaterialViewController.materialStorageText == "" {
+                
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                
+                var found = false
+                for material in ListMaterialViewController.materialArray {
+                    if material.postID == newItem.postID {
+                        found = true
+                        break
+                    }
+                }
+                if !found {
+                    
+                   // Constants.shared.getMaterials()
+                    ListMaterialViewController.materialArray.append(newItem)
+                }
+                
+                self.tableView.reloadData()
+                
+            }
             
         }
-    
         } )
-
     }
     
  
@@ -128,10 +158,10 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
     }
 //    sola kaydır sil ekranı burası
     
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "sil", handler: { action, indexPath in
@@ -153,4 +183,3 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
         return ListMaterialViewController.materialArray.count
     }
 }
-

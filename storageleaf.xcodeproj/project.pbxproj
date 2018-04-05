@@ -24,6 +24,7 @@
 		DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */; };
 		DB4562B120715C9E00FEE0E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */; };
 		DB84D639207391D9007B2A60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB84D638207391D9007B2A60 /* GoogleService-Info.plist */; };
+		DBCD41AE20764F9800935FE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD41AD20764F9800935FE6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DB4562B020715C9E00FEE0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB4562B220715C9E00FEE0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB84D638207391D9007B2A60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DBCD41AD20764F9800935FE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */,
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
 				DB84D638207391D9007B2A60 /* GoogleService-Info.plist */,
+				DBCD41AD20764F9800935FE6 /* Constants.swift */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB115C5A20727A620086159E /* Material.swift in Sources */,
+				DBCD41AE20764F9800935FE6 /* Constants.swift in Sources */,
 				DB4562A920715C9E00FEE0E3 /* ViewController.swift in Sources */,
 				DB115C5520723A430086159E /* ReportMaterialViewController.swift in Sources */,
 				C887A3332073C57C00F3206B /* Color.swift in Sources */,
