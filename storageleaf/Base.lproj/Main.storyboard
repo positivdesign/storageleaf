@@ -19,9 +19,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-HU-79y">
-                                <rect key="frame" x="20" y="352" width="335" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Sc-KdX">
+                                <rect key="frame" x="5" y="474" width="365" height="60"/>
                                 <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Psr-5r-Jqr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Malzeme Çıkış">
+                                    <color key="titleColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.76839983463287354" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-GG-DHx">
+                                <rect key="frame" x="60" y="25" width="255" height="269"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-HU-79y">
+                                <rect key="frame" x="5" y="384" width="365" height="60"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nc7-FI-XUL"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sGs-o5-qsT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Malzeme Kayıt">
@@ -29,43 +51,26 @@
                                     <color key="titleShadowColor" red="0.020727841183543205" green="0.89798158407211304" blue="0.091452367603778839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="24"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value=""/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
                                         <color key="value" red="0.99642701259638233" green="1" blue="0.33251009031474565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Sc-KdX">
-                                <rect key="frame" x="20" y="418" width="335" height="48"/>
-                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Malzeme Çıkış">
-                                    <color key="titleColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.76839983463287354" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="24"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_2" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-GG-DHx">
-                                <rect key="frame" x="60" y="25" width="255" height="269"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="20" id="3bZ-pe-WSi"/>
-                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="4KW-Nz-l2V"/>
-                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fig-B0-fzz"/>
-                            <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="58" id="Opp-og-7b3"/>
-                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="UeK-Mz-Pf6"/>
-                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="esU-Zy-QP4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbM-Sc-KdX" secondAttribute="trailing" constant="5" id="3bZ-pe-WSi"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="30" id="PNo-Q5-Rbt"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Q1U-x6-M9q"/>
+                            <constraint firstItem="HQa-HU-79y" firstAttribute="top" secondItem="Rnv-GG-DHx" secondAttribute="bottom" constant="90" id="buR-E0-hN3"/>
+                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="esU-Zy-QP4"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="g9Z-Zc-cam"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnv-GG-DHx" secondAttribute="trailing" constant="60" id="hcq-Qn-oE5"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="mPU-zE-C36"/>
-                            <constraint firstItem="dbM-Sc-KdX" firstAttribute="top" secondItem="HQa-HU-79y" secondAttribute="bottom" constant="18" id="vd6-bD-14z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="20" id="vhx-E8-hgc"/>
                             <constraint firstItem="Rnv-GG-DHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="xHO-t6-yUN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQa-HU-79y" secondAttribute="trailing" constant="5" id="yjr-4p-eiu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -165,9 +170,10 @@
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-kr-i7a">
                                 <rect key="frame" x="0.0" y="561" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Malzeme Kayıt">
-                                    <color key="titleColor" red="0.52354425191879272" green="0.73459529876708984" blue="0.25083759427070618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="saveMaterialButtonAction:" destination="lEv-y5-pXA" eventType="touchUpInside" id="8WK-Mj-Spa"/>
@@ -275,9 +281,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMp-We-2XU">
                                 <rect key="frame" x="0.0" y="561" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Malzeme Ara">
-                                    <color key="titleColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteMaterialSearchButtonAction:" destination="8N6-EG-Fk9" eventType="touchUpInside" id="VEa-ii-3t8"/>
@@ -580,14 +587,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8nD-c4-Ek2">
-                                <rect key="frame" x="8" y="36" width="359" height="570"/>
+                                <rect key="frame" x="8" y="57" width="359" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W4-wx-s1v">
                                 <rect key="frame" x="0.0" y="614" width="375" height="33"/>
+                                <color key="backgroundColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Malzeme Çıkış">
-                                    <color key="titleColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Aktar">
+                                    <color key="titleColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MALZEME LİSTESİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXI-0l-Zb4">
@@ -602,12 +610,15 @@
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="bottom" secondItem="7W4-wx-s1v" secondAttribute="bottom" constant="20" id="7d7-t9-5kf"/>
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="hXI-0l-Zb4" secondAttribute="trailing" constant="8" id="D5N-LR-vvb"/>
                             <constraint firstItem="8nD-c4-Ek2" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" constant="8" id="M26-UC-BXo"/>
-                            <constraint firstItem="hXI-0l-Zb4" firstAttribute="top" secondItem="H3D-kh-cxU" secondAttribute="top" constant="8" id="Oxa-hv-h5M"/>
-                            <constraint firstItem="8nD-c4-Ek2" firstAttribute="top" secondItem="H3D-kh-cxU" secondAttribute="top" constant="16" id="agL-ho-qA4"/>
+                            <constraint firstItem="8nD-c4-Ek2" firstAttribute="top" secondItem="hXI-0l-Zb4" secondAttribute="bottom" constant="8" id="RpP-gJ-u5d"/>
+                            <constraint firstItem="8nD-c4-Ek2" firstAttribute="top" secondItem="H3D-kh-cxU" secondAttribute="top" constant="37" id="agL-ho-qA4"/>
+                            <constraint firstItem="hXI-0l-Zb4" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" constant="8" id="ccf-6o-RRv"/>
+                            <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="hXI-0l-Zb4" secondAttribute="trailing" constant="8" id="cjl-Tt-vHk"/>
                             <constraint firstItem="7W4-wx-s1v" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" id="eUv-8E-RJq"/>
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="8nD-c4-Ek2" secondAttribute="trailing" constant="8" id="ifZ-BG-4SS"/>
                             <constraint firstItem="7W4-wx-s1v" firstAttribute="top" secondItem="8nD-c4-Ek2" secondAttribute="bottom" constant="8" id="lDp-WF-qx1"/>
                             <constraint firstItem="hXI-0l-Zb4" firstAttribute="leading" secondItem="H3D-kh-cxU" secondAttribute="leading" constant="8" id="mti-dV-VSu"/>
+                            <constraint firstItem="hXI-0l-Zb4" firstAttribute="top" secondItem="H3D-kh-cxU" secondAttribute="top" constant="8" id="o0Z-GB-gDa"/>
                             <constraint firstItem="H3D-kh-cxU" firstAttribute="trailing" secondItem="7W4-wx-s1v" secondAttribute="trailing" id="w8w-Sh-uBd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H3D-kh-cxU"/>
@@ -618,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xK-8N-6Sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342" y="704"/>
+            <point key="canvasLocation" x="1341.5999999999999" y="703.89805097451278"/>
         </scene>
     </scenes>
     <resources>

@@ -25,11 +25,16 @@ class ListMaterialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         prepareMatearialList()
         prepareTableView()
 
+        
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        ListMaterialViewController.materialArray = []
+    }
 
     fileprivate func prepareTableView (){
         tableView.delegate = self
@@ -69,7 +74,7 @@ class ListMaterialViewController: UIViewController {
             DeleteMaterialViewController.materialNumberText == matNum ||
         DeleteMaterialViewController.materialStorageText == matStor {
                 
-                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
                 
                 var found = false
                 for material in ListMaterialViewController.materialArray {
@@ -80,7 +85,7 @@ class ListMaterialViewController: UIViewController {
                 }
                 if !found {
                     
-                    Constants.shared.getMaterials()
+                    //Constants.shared.getMaterials()
                     ListMaterialViewController.materialArray.append(newItem)
                 }
                 
@@ -93,7 +98,7 @@ class ListMaterialViewController: UIViewController {
                 DeleteMaterialViewController.materialNumberText == "" &&
                 DeleteMaterialViewController.materialStorageText == "" {
                 
-                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
                 
                 var found = false
                 for material in ListMaterialViewController.materialArray {
@@ -164,7 +169,7 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "sil", handler: { action, indexPath in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "SİL", handler: { action, indexPath in
         Database.database().reference().child("material").child(ListMaterialViewController.materialArray[indexPath.row].postID!).removeValue()
             
             ListMaterialViewController.materialArray.remove(at: indexPath.row) // removing selected if from id array locally
