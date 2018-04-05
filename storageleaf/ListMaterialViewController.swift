@@ -57,6 +57,7 @@ class ListMaterialViewController: UIViewController {
 //            static var resIDText: String?
 //            static var materialNumberText: String?
 //            static var materialIDText: String?
+//            static var materialStorageText: String?
           
             
             let val = item.value as! NSDictionary
@@ -69,7 +70,8 @@ class ListMaterialViewController: UIViewController {
             
             if DeleteMaterialViewController.materialIDText == matID ||
                 DeleteMaterialViewController.resIDText == matResp ||
-            DeleteMaterialViewController.materialNumberText == matNum {
+            DeleteMaterialViewController.materialNumberText == matNum ||
+        DeleteMaterialViewController.materialStorageText == matStor {
                 
                 let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
                 
@@ -78,6 +80,21 @@ class ListMaterialViewController: UIViewController {
                 self.tableView.reloadData()
                 
             }
+            
+            if DeleteMaterialViewController.materialIDText == "" &&
+                DeleteMaterialViewController.resIDText == "" &&
+                DeleteMaterialViewController.materialNumberText == "" &&
+                DeleteMaterialViewController.materialStorageText == "" {
+                
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                
+                self.materialArray.append(newItem)
+                
+                self.tableView.reloadData()
+                
+            }
+            
+            
             
             
            

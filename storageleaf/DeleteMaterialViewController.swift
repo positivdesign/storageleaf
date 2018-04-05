@@ -16,6 +16,7 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
     static var resIDText: String?
     static var materialNumberText: String?
     static var materialIDText: String?
+    static var materialStorageText: String?
     
     
     @IBOutlet weak var deleteResponsibleID: UITextField!
@@ -38,12 +39,14 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
         
         pickerDeleteMaterial.delegate = self
         pickerDeleteMaterial.dataSource = self
-        
+///picker için default hidden fonksiyonu tanımlandı
         pickerDeleteIsHidden()
-        
-        //firebase reference
+
+
+        ///firebase reference
         ref = Database.database().reference()
 
+        //sayfalar arası geçiş button
         preparedeleteMaterialSearchButton()
         
    
@@ -61,8 +64,8 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
         if switchDeleteSearchButton.isOn {
             
             pickerDeleteMaterial.isHidden = false
-            
-        }else {
+        }
+        else {
             
             pickerDeleteMaterial.isHidden = true
         }
@@ -99,7 +102,14 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
         DeleteMaterialViewController.materialNumberText = deleteMaterialNumber.text
         DeleteMaterialViewController.resIDText = deleteResponsibleID.text
         
-        print(DeleteMaterialViewController.materialIDText,DeleteMaterialViewController.materialNumberText,DeleteMaterialViewController.resIDText )
+        if pickerDeleteMaterial.isHidden == true {
+            DeleteMaterialViewController.materialStorageText = ""
+        } else {
+            DeleteMaterialViewController.materialStorageText = SaveMaterialViewController.storageAreNames[pickerDeleteMaterial.selectedRow(inComponent: 0)]
+            
+        }
+        
+        print(DeleteMaterialViewController.materialIDText,DeleteMaterialViewController.materialNumberText,DeleteMaterialViewController.resIDText,DeleteMaterialViewController.materialStorageText )
     }
     
      /////////////////////////////////////Button Sayfalar arası geçiş///////////////////////
