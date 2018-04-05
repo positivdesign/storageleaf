@@ -12,11 +12,11 @@ import FirebaseDatabase
 
 class ListMaterialViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
+
+
     
     var materialArray: [Material] = []
-    
     var ref: DatabaseReference!
 
     
@@ -24,7 +24,6 @@ class ListMaterialViewController: UIViewController {
         super.viewDidLoad()
         
         prepareMatearialList()
-        
         prepareTableView()
 
     }
@@ -34,13 +33,15 @@ class ListMaterialViewController: UIViewController {
     }
     
     
-    
+    //Table view için fonksiyon
     fileprivate func prepareTableView (){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MaterialTableViewCell", bundle: nil), forCellReuseIdentifier: "MaterialTableViewCell")
     }
     
+    
+    //firebaseden data çekme
     fileprivate func prepareMatearialList () {
         
         ref = Database.database().reference()
@@ -51,40 +52,34 @@ class ListMaterialViewController: UIViewController {
             
         let snapshotValue = fireBaseData.value as! NSDictionary
             
-//            print(snapshotValue)
-        self.ref.observe(.value, with: { denemeData in
-            
-//            print(denemeData.key)
-            
-            let snapshotValue2 = denemeData.value as! NSDictionary
-            
-            for abc in snapshotValue2 {
-                print(denemeData.children())
-
-//                let val2 = abc.value as! NSDictionary
-//                let asd = val2.key as! String
-//                print(val2)
-//                val2.count
-            }
-            }
-            )
-        
         for item in snapshotValue {
+           
+//            static var resIDText: String?
+//            static var materialNumberText: String?
+//            static var materialIDText: String?
+          
             
             let val = item.value as! NSDictionary
             let matID = val["materialID"] as! String
             let matNum = val["materialNumber"] as! String
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
-//            print(val)
-            
             let postID = "-L9G8P9_u-zS3lycwx30"
             
-            let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+            if DeleteMaterialViewController.materialIDText == matID &&
+                DeleteMaterialViewController.resIDText == matResp &&
+            DeleteMaterialViewController.materialNumberText == matNum {
+                
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
+                
+                self.materialArray.append(newItem)
+                
+                self.tableView.reloadData()
+                
+            }
             
-            self.materialArray.append(newItem)
             
-            self.tableView.reloadData()
+           
             
         }
     
@@ -144,7 +139,7 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
             tableView.deleteRows(at: [indexPath], with: .fade) // TableView Animation
             
             Database.database().reference().child("material").child(materialArray[indexPath.row].postID!).removeValue()
-            materialArray.remove(at: indexPath.row) // removing selected if from id array locally
+           // materialArray.remove(at: indexPath.row) // removing selected if from id array locally
             
 
             

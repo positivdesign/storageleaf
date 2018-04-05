@@ -13,6 +13,11 @@ class DeleteMaterialViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+    static var resIDText: String?
+    static var materialNumberText: String?
+    static var materialIDText: String?
+    
+    
     @IBOutlet weak var deleteResponsibleID: UITextField!
     
     @IBOutlet weak var deleteMaterialNumber: UITextField!
@@ -30,7 +35,8 @@ class DeleteMaterialViewController: UIViewController {
         ref = Database.database().reference()
 
         preparedeleteMaterialSearchButton()
-    
+        
+   
     
     }
 
@@ -40,6 +46,10 @@ class DeleteMaterialViewController: UIViewController {
     }
     
     @IBAction func deleteMaterialSearchButtonAction(_ sender: Any) {
+        
+        DeleteMaterialViewController.materialIDText = deleteMaterialID.text
+        DeleteMaterialViewController.materialNumberText = deleteMaterialNumber.text
+        DeleteMaterialViewController.resIDText = deleteResponsibleID.text
     }
     
      /////////////////////////////////////Button Sayfalar arası geçiş///////////////////////
