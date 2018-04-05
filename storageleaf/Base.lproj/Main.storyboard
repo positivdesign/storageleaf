@@ -315,6 +315,25 @@
                                 <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stok Alanı Seçimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHo-IC-AxH">
+                                <rect key="frame" x="0.0" y="351" width="132" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.52354425189999998" green="0.73459529879999996" blue="0.25083759430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkJ-2d-14a">
+                                <rect key="frame" x="178" y="325" width="192" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4n9-gX-usc"/>
+                                    <constraint firstAttribute="width" constant="192" id="88a-RL-rcD"/>
+                                </constraints>
+                            </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-yE-Epf">
+                                <rect key="frame" x="38" y="386.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="pickerDeleteMaterialAction:" destination="8N6-EG-Fk9" eventType="valueChanged" id="Tkt-SP-PUe"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -329,12 +348,17 @@
                             <constraint firstItem="Vzm-ma-Bfp" firstAttribute="leading" secondItem="YJo-b4-lUm" secondAttribute="trailing" constant="14" id="H0b-iL-s1g"/>
                             <constraint firstItem="83C-Fo-wDY" firstAttribute="trailing" secondItem="d54-Ow-XrW" secondAttribute="trailing" id="JTc-Qi-Fym"/>
                             <constraint firstItem="YJo-b4-lUm" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" id="JUy-Q2-tyk"/>
+                            <constraint firstItem="fDl-yE-Epf" firstAttribute="top" secondItem="qHo-IC-AxH" secondAttribute="bottom" constant="15" id="O0X-Ed-YYL"/>
                             <constraint firstItem="Vzm-ma-Bfp" firstAttribute="top" secondItem="wdK-HP-pKi" secondAttribute="bottom" constant="18" id="PzT-Eb-cbS"/>
+                            <constraint firstItem="d54-Ow-XrW" firstAttribute="trailing" secondItem="RkJ-2d-14a" secondAttribute="trailing" constant="5" id="Qxl-r7-kbr"/>
+                            <constraint firstItem="qHo-IC-AxH" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" id="T2a-pd-qSx"/>
                             <constraint firstItem="1Py-Wk-WtP" firstAttribute="top" secondItem="YJo-b4-lUm" secondAttribute="bottom" constant="27" id="TU7-ba-bzR"/>
                             <constraint firstItem="1Py-Wk-WtP" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" id="YbK-Ku-Wms"/>
                             <constraint firstItem="83C-Fo-wDY" firstAttribute="top" secondItem="d54-Ow-XrW" secondAttribute="top" constant="5" id="au8-HM-d2F"/>
                             <constraint firstItem="Uhz-DC-b3V" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" constant="67" id="hQB-Hp-flm"/>
+                            <constraint firstItem="qHo-IC-AxH" firstAttribute="top" secondItem="1Py-Wk-WtP" secondAttribute="bottom" constant="27" id="kaU-Aw-gGj"/>
                             <constraint firstItem="YJo-b4-lUm" firstAttribute="top" secondItem="WR3-jY-h0e" secondAttribute="bottom" constant="27" id="lQI-aR-Y1S"/>
+                            <constraint firstItem="RkJ-2d-14a" firstAttribute="top" secondItem="Vzm-ma-Bfp" secondAttribute="bottom" constant="45" id="lXC-6I-SBm"/>
                             <constraint firstItem="O13-O1-czb" firstAttribute="top" secondItem="Vzm-ma-Bfp" secondAttribute="bottom" constant="18" id="lcL-DB-01m"/>
                             <constraint firstItem="WR3-jY-h0e" firstAttribute="top" secondItem="Uhz-DC-b3V" secondAttribute="bottom" constant="80" id="qe0-hb-FXl"/>
                             <constraint firstItem="d54-Ow-XrW" firstAttribute="bottom" secondItem="YMp-We-2XU" secondAttribute="bottom" constant="70" id="qxB-uY-7X2"/>
@@ -342,6 +366,7 @@
                             <constraint firstItem="YMp-We-2XU" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" id="tTI-b0-N6l"/>
                             <constraint firstItem="O13-O1-czb" firstAttribute="leading" secondItem="1Py-Wk-WtP" secondAttribute="trailing" constant="14" id="tfZ-0W-Edv"/>
                             <constraint firstItem="d54-Ow-XrW" firstAttribute="trailing" secondItem="O13-O1-czb" secondAttribute="trailing" constant="5" id="wW5-yT-D1w"/>
+                            <constraint firstItem="fDl-yE-Epf" firstAttribute="leading" secondItem="d54-Ow-XrW" secondAttribute="leading" constant="38" id="xSN-dU-ika"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d54-Ow-XrW"/>
                     </view>
@@ -353,6 +378,8 @@
                         <outlet property="deleteMaterialNumber" destination="Vzm-ma-Bfp" id="DJo-u2-YSI"/>
                         <outlet property="deleteMaterialSearchButton" destination="YMp-We-2XU" id="MJn-1m-KxF"/>
                         <outlet property="deleteResponsibleID" destination="wdK-HP-pKi" id="fSA-dR-Cah"/>
+                        <outlet property="pickerDeleteMaterial" destination="RkJ-2d-14a" id="FQt-et-JxZ"/>
+                        <outlet property="switchDeleteSearchButton" destination="fDl-yE-Epf" id="zX0-7H-86X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdR-mL-GPI" userLabel="First Responder" sceneMemberID="firstResponder"/>

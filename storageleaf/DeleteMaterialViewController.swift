@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class DeleteMaterialViewController: UIViewController {
+class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
     var ref: DatabaseReference!
     
@@ -26,10 +26,20 @@ class DeleteMaterialViewController: UIViewController {
     
     @IBOutlet weak var deleteMaterialSearchButton: UIButton!
     
+    @IBOutlet weak var switchDeleteSearchButton: UISwitch!
     
-
+    @IBOutlet weak var pickerDeleteMaterial: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        
+        pickerDeleteMaterial.delegate = self
+        pickerDeleteMaterial.dataSource = self
+        
+        pickerDeleteIsHidden()
         
         //firebase reference
         ref = Database.database().reference()
@@ -44,6 +54,44 @@ class DeleteMaterialViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func pickerDeleteMaterialAction(_ sender: Any) {
+        
+        if switchDeleteSearchButton.isOn {
+            
+            pickerDeleteMaterial.isHidden = false
+            
+        }else {
+            
+            pickerDeleteMaterial.isHidden = true
+        }
+        
+    }
+    
+    
+    func pickerDeleteIsHidden(){
+         pickerDeleteMaterial.isHidden = true
+    }
+    ///////////////////////////////Picker View İle ilgili
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return SaveMaterialViewController.storageAreNames.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return SaveMaterialViewController.storageAreNames[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    /////////////////////////////////////////////////////////////////
+    
+    
     
     @IBAction func deleteMaterialSearchButtonAction(_ sender: Any) {
         
