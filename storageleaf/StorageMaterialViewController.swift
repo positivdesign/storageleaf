@@ -52,7 +52,9 @@ class StorageMaterialViewController: UIViewController {
                 let matResp = val["materialResponsibleID"] as! String
                 let matStor = val["storageArea"] as! String
                 
-                let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
+                let postID = "-L9GL1BLO7xSblrJj0Go"
+                
+                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
                 
                 self.materialArray.append(newItem)
                 

@@ -50,7 +50,24 @@ class ListMaterialViewController: UIViewController {
         childRef.observe(.value, with: { fireBaseData in
             
         let snapshotValue = fireBaseData.value as! NSDictionary
-        
+            
+//            print(snapshotValue)
+        self.ref.observe(.value, with: { denemeData in
+            
+//            print(denemeData.key)
+            
+            let snapshotValue2 = denemeData.value as! NSDictionary
+            
+            for abc in snapshotValue2 {
+                print(denemeData.children())
+
+//                let val2 = abc.value as! NSDictionary
+//                let asd = val2.key as! String
+//                print(val2)
+//                val2.count
+            }
+            }
+            )
         
         for item in snapshotValue {
             
@@ -59,8 +76,11 @@ class ListMaterialViewController: UIViewController {
             let matNum = val["materialNumber"] as! String
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
+//            print(val)
             
-            let newItem = Material(matID, matResp, matStor, matNum, materialImage: UIImage(named:"leaf"))
+            let postID = "-L9G8P9_u-zS3lycwx30"
+            
+            let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
             
             self.materialArray.append(newItem)
             
@@ -122,11 +142,11 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
             materialArray.remove(at: indexPath.row) //Remove the selected name from array used in TableView that is displayed in cell
             
             tableView.deleteRows(at: [indexPath], with: .fade) // TableView Animation
-
             
-            ref?.child("material").childByAutoId().removeValue() // remove the child referred using id from database
-            
+            Database.database().reference().child("material").child(materialArray[indexPath.row].postID!).removeValue()
             materialArray.remove(at: indexPath.row) // removing selected if from id array locally
+            
+
             
             self.tableView.reloadData()
             
