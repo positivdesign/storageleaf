@@ -15,7 +15,7 @@ class ListMaterialViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var materialArray: [Material] = []
+    static var materialArray: [Material] = []
     
     var ref: DatabaseReference!
 
@@ -31,21 +31,18 @@ class ListMaterialViewController: UIViewController {
     
 //    tablo elemanlarını sayfadan çıkınca sıfırlamak için
     
-    override func viewWillDisappear(_ animated: Bool) {
-        materialArray = []
-    }
-    
-    
-    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        materialArray = []
+//    }
+
     fileprivate func prepareTableView (){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MaterialTableViewCell", bundle: nil), forCellReuseIdentifier: "MaterialTableViewCell")
+        tableView.tableFooterView = UIView()
     }
     
     fileprivate func prepareMatearialList () {
-        
-        materialArray = []
         
 //        firebase üzerinden post data çekiliyor
         
@@ -55,10 +52,11 @@ class ListMaterialViewController: UIViewController {
         
         childRef.observe(.value, with: { fireBaseData in
             
-        let snapshotValue = fireBaseData.value as! NSDictionary // nsdictionary denilince daha düzenli bir yapıda getiriyor.
+            let snapshotValue = fireBaseData.value as? NSDictionary ?? [:] // nsdictionary denilince daha düzenli bir yapıda getiriyor.
             
         
 //             gelen her bir dizi elemanını atma yapıyor.
+            
         for item in snapshotValue {
             let postID = item.key as! String
             let val = item.value as! NSDictionary
@@ -66,19 +64,28 @@ class ListMaterialViewController: UIViewController {
             let matNum = val["materialNumber"] as! String
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
-//            print(item)
             
             let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
             
-            self.materialArray.append(newItem)
+            var found = false
+            for material in ListMaterialViewController.materialArray {
+                if material.postID == newItem.postID {
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                ListMaterialViewController.materialArray.append(newItem)
+            }
             
             self.tableView.reloadData()
             
         }
     
-    } )
+        } )
 
     }
+    
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,7 +112,7 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell: MaterialTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MaterialTableViewCell") as? MaterialTableViewCell else {
             return UITableViewCell()
         }
-        let materialAtIndex = materialArray[indexPath.row]
+        let materialAtIndex = ListMaterialViewController.materialArray[indexPath.row]
         
         if let malzemeResmi = materialAtIndex.materialImage {
             cell.materialImageView.image = malzemeResmi
@@ -121,36 +128,29 @@ extension ListMaterialViewController: UITableViewDelegate, UITableViewDataSource
     }
 //    sola kaydır sil ekranı burası
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print(materialArray[indexPath.row].postID ?? "naber")
-        let abc = indexPath.row
-        print(abc)
-        if editingStyle == .delete {
-            
-            Database.database().reference().child("material").child(materialArray[indexPath.row].postID!).removeValue()
-            
-            materialArray.remove(at: indexPath.row) // removing selected if from id array locally
-            
-            print(materialArray[indexPath.row].postID ?? "burda")
-            
-//            print(materialArray[abc])
-            
-            tableView.deleteRows(at: [indexPath], with:  UITableViewRowAnimation.automatic) // TableView Animation
-            
-//           Database.database().reference().child("material").child(materialArray[indexPath.row].postID!).removeValue()
-            
-            materialArray = []
-//
-//            self.tableView.reloadData()
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "sil", handler: { action, indexPath in
+        Database.database().reference().child("material").child(ListMaterialViewController.materialArray[indexPath.row].postID!).removeValue()
             
-        }
+            ListMaterialViewController.materialArray.remove(at: indexPath.row) // removing selected if from id array locally
+            tableView.reloadData()
+        })
+        
+//        let editAction = UITableViewRowAction(style: .normal, title: "edit", handler: { action, indexPath in
+//            print("EDİT")
+//        })
+        
+        return [deleteAction]
     }
     
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return materialArray.count
+        return ListMaterialViewController.materialArray.count
     }
 }
 
