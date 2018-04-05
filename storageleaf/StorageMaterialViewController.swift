@@ -46,13 +46,12 @@ class StorageMaterialViewController: UIViewController {
             
             for item in snapshotValue {
                 
+                let postID = item.key as! String
                 let val = item.value as! NSDictionary
                 let matID = val["materialID"] as! String
                 let matNum = val["materialNumber"] as! String
                 let matResp = val["materialResponsibleID"] as! String
                 let matStor = val["storageArea"] as! String
-                
-                let postID = "-L9GL1BLO7xSblrJj0Go"
                 
                 let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"leaf"))
                 
