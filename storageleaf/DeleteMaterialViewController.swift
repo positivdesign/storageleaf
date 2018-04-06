@@ -46,8 +46,10 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
         
         searchView.pickerDeleteMaterial.delegate = self
         searchView.pickerDeleteMaterial.dataSource = self
+        
+        
 ///picker için default hidden fonksiyonu tanımlandı
-        pickerDeleteIsHidden()
+
 
 
         ///firebase reference
@@ -74,10 +76,6 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
     }
     
     
-    
-    func pickerDeleteIsHidden(){
-         searchView.pickerDeleteMaterial.isHidden = true
-    }
     ///////////////////////////////Picker View İle ilgili
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1

@@ -18,7 +18,7 @@ class SLSearchView: NibView {
     
     @IBOutlet weak var deleteMaterialID: TextField!
     
-   // @IBOutlet weak var deleteMaterialSearchButton: UIButton!
+   //@IBOutlet weak var deleteMaterialSearchButton: UIButton!
     
     @IBOutlet weak var switchDeleteSearchButton: UISwitch!
     
@@ -29,6 +29,7 @@ class SLSearchView: NibView {
         super.awakeFromNib()
         
         prepareTextFields()
+        pickerDeleteIsHidden()
         
     }
     
@@ -45,6 +46,11 @@ class SLSearchView: NibView {
         deleteResponsibleID.placeholderActiveColor = SLColor.primary
         deleteMaterialID.placeholderActiveColor = SLColor.primary
         deleteMaterialNumber.placeholderActiveColor = SLColor.primary
+    }
+    
+    
+    func pickerDeleteIsHidden(){
+      pickerDeleteMaterial.isHidden = true
     }
     
     @IBAction func pickerDeleteMaterialAction(_ sender: Any) {

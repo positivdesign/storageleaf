@@ -8,20 +8,23 @@
 
 import UIKit
 import FirebaseDatabase
+import Material
 
-class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate   {
+class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate   {
     
     var ref: DatabaseReference!
     
-    @IBOutlet weak var saveMaterialRespID: UITextField!
+//    @IBOutlet weak var saveMaterialRespID: UITextField!
+//    
+//    @IBOutlet weak var saveMaterialNumber: UITextField!
+//    
+//    @IBOutlet weak var saveMaterialID: UITextField!
+//    
+//    @IBOutlet weak var saveStorageArea: UIPickerView!
+    @IBOutlet weak var saveMaterialButton: UIButton!
     
-    @IBOutlet weak var saveMaterialNumber: UITextField!
-    
-    @IBOutlet weak var saveMaterialID: UITextField!
-    
-    @IBOutlet weak var saveStorageArea: UIPickerView!
-    
-    @IBOutlet weak var saveMaterialSaveButton: UIButton!
+
+    @IBOutlet weak var searchView: SLSearchView!
     
     static let storageAreNames = ["RA1","RA2","RA3","RA4","RB1","RB2","RB3","RB4"]
     var fireBaseList = ["saveMaterialRespID", "saveMaterialNumber","saveMaterialID","saveStorageArea"]
@@ -35,17 +38,9 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
        
         
         
-        saveStorageArea.delegate = self
-        saveStorageArea.dataSource = self
-        
-
- 
-            
-
-     
+        searchView.pickerDeleteMaterial.delegate = self
+        searchView.pickerDeleteMaterial.dataSource = self
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,9 +55,9 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
        /////////////////////////////firebase save///////////////////////////////
      
         
-        let name: NSString =  SaveMaterialViewController.storageAreNames[saveStorageArea.selectedRow(inComponent: 0)] as NSString
+        let name: NSString =  SaveMaterialViewController.storageAreNames[searchView.pickerDeleteMaterial.selectedRow(inComponent: 0)] as NSString
         
-        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name])
+        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": searchView.deleteResponsibleID.text, "materialNumber": searchView.deleteMaterialNumber.text, "materialID": searchView.deleteMaterialID.text, "storageArea": name])
        
 ///////////////////////////////////////////////////////////////////////////////////
         

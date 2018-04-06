@@ -55,7 +55,7 @@
                         <constraint firstAttribute="height" priority="250" constant="200" id="xEm-H5-xqy"/>
                     </constraints>
                 </stackView>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-li-eXi">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-li-eXi">
                     <rect key="frame" x="239" y="280" width="51" height="31"/>
                     <connections>
                         <action selector="pickerDeleteMaterialAction:" destination="-1" eventType="valueChanged" id="Fiz-Mc-tEJ"/>
