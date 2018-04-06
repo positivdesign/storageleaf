@@ -31,29 +31,17 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
         super.viewDidLoad()
 
         ref = Database.database().reference()
-        
-       
-        
-        
         saveStorageArea.delegate = self
         saveStorageArea.dataSource = self
-        
 
- 
-            
-
-     
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
     
-    
-    
+
 
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
@@ -61,13 +49,25 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
      
         
         let name: NSString =  SaveMaterialViewController.storageAreNames[saveStorageArea.selectedRow(inComponent: 0)] as NSString
+ 
         
-        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name])
+        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name], withCompletionBlock: { (error, ref) in
+            if error == nil {
+                print("success")
+                
+                self.saveMaterialRespID.text = ""
+                self.saveMaterialNumber.text = ""
+                self.saveMaterialID.text = ""
+                
+            } else {
+                print("failure")
+            }
+        })
+    }
        
 ///////////////////////////////////////////////////////////////////////////////////
         
 
-    }
     
     
   ///////////////////////////////Picker View İle ilgili

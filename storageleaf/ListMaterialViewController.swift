@@ -57,7 +57,7 @@ class ListMaterialViewController: UIViewController {
             
 
         let snapshotValue = fireBaseData.value as? NSDictionary ?? [:] // nsdictionary denilince daha düzenli bir yapıda getiriyor.
-            
+           
 
         for item in snapshotValue {
             let postID = item.key as! String
@@ -66,57 +66,42 @@ class ListMaterialViewController: UIViewController {
             let matNum = val["materialNumber"] as! String
             let matResp = val["materialResponsibleID"] as! String
             let matStor = val["storageArea"] as! String
-
-            // TODO: FIX ME
             
+            let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
             
-            if (DeleteMaterialViewController.materialIDText == "" &&
-                    DeleteMaterialViewController.resIDText == "" &&
-                    DeleteMaterialViewController.materialNumberText == "" &&
-                    DeleteMaterialViewController.materialStorageText == "") {
-                    
-                    let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
-                    
-                    var found = false
-                    for material in ListMaterialViewController.materialArray {
-                        if material.postID == newItem.postID {
-                            found = true
-                            break
-                        }
-                    }
-                    if !found {
-                        
-                        // Constants.shared.getMaterials()
-                        ListMaterialViewController.materialArray.append(newItem)
-                        
-                        print(postID)
-                    }
-                    
-                    self.tableView.reloadData()
+            var found = false
+            
+            for material in ListMaterialViewController.materialArray {
+                if material.postID == newItem.postID {
+                    found = true
+                    break
+                }
             }
-            else if ((DeleteMaterialViewController.materialIDText == matID && !(DeleteMaterialViewController.materialIDText?.isEmpty)!) ||
-                    (DeleteMaterialViewController.resIDText == matResp  && !(DeleteMaterialViewController.resIDText?.isEmpty)!) ||
-                    (DeleteMaterialViewController.materialNumberText == matNum && !(DeleteMaterialViewController.materialNumberText?.isEmpty)!) ||
-                    DeleteMaterialViewController.materialStorageText == matStor) {
-                    
-                    let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
-                    
-                    var found = false
-                    for material in ListMaterialViewController.materialArray {
-                        if material.postID == newItem.postID {
-                            found = true
-                            break
-                        }
-                    }
-                    if !found {
-                        
-                        //Constants.shared.getMaterials()
-                        ListMaterialViewController.materialArray.append(newItem)
-                        
-                        print("burda")
-                    }
-                    
-                    self.tableView.reloadData()
+
+
+//                BU VE BU ŞEKLİNDE SINIRLAMA VARSA BU DÖNGÜYE GİYOR ÖRNEK RA1 VE AATMACA OLANLAR İÇİN
+                
+            let fieldIsFilledArray = [!(DeleteMaterialViewController.materialIDText?.isEmpty)!, !(DeleteMaterialViewController.resIDText?.isEmpty)!, !(DeleteMaterialViewController.materialNumberText?.isEmpty)!, !(DeleteMaterialViewController.materialStorageText?.isEmpty)!]
+            
+            let fieldEqualArray = [DeleteMaterialViewController.materialIDText == matID, DeleteMaterialViewController.resIDText == matResp, DeleteMaterialViewController.materialNumberText == matNum, DeleteMaterialViewController.materialStorageText == matStor]
+            
+            var conditionArray = [Bool]()
+            
+            var i = 0
+            for fieldFilled in fieldIsFilledArray {
+                if fieldFilled {
+                    let fieldEqual = fieldEqualArray[i]
+                    let condition = fieldEqual
+                    conditionArray.append(condition)
+                }
+                i += 1
+            }
+     
+            if !conditionArray.contains(false) {
+                if !found {
+                    ListMaterialViewController.materialArray.append(newItem)
+                }
+                self.tableView.reloadData()
             }
             
         }
