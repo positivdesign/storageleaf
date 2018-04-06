@@ -66,7 +66,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPi
         ref?.child("material").childByAutoId().setValue(["materialResponsibleID": searchView.deleteResponsibleID.text, "materialNumber": searchView.deleteMaterialNumber.text, "materialID": searchView.deleteMaterialID.text, "storageArea": name])
        
 ///////////////////////////////////////////////////////////////////////////////////
-        
+//        waljfsdhfadkshfb
 
     }
     
