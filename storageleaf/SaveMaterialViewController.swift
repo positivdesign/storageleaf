@@ -21,7 +21,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPi
 //    @IBOutlet weak var saveMaterialID: UITextField!
 //    
 //    @IBOutlet weak var saveStorageArea: UIPickerView!
-    @IBOutlet weak var saveMaterialButton: UIButton!
+    @IBOutlet weak var saveMaterialButton: FlatButton!
     
 
     @IBOutlet weak var searchView: SLSearchView!
@@ -35,7 +35,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPi
 
         ref = Database.database().reference()
         
-       
+       prepareButton()
         
         
         searchView.pickerDeleteMaterial.delegate = self
@@ -48,7 +48,13 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     
-    
+    func prepareButton(){
+        
+        saveMaterialButton.cornerRadiusPreset = .cornerRadius4
+        saveMaterialButton.pulseColor = .white
+        saveMaterialButton.depthPreset = .depth4
+        
+    }
 
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
