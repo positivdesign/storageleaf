@@ -8,20 +8,23 @@
 
 import UIKit
 import FirebaseDatabase
+import Material
 
-class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate   {
+class SaveMaterialViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate   {
     
     var ref: DatabaseReference!
     
-    @IBOutlet weak var saveMaterialRespID: UITextField!
+    //    @IBOutlet weak var saveMaterialRespID: UITextField!
+    //
+    //    @IBOutlet weak var saveMaterialNumber: UITextField!
+    //
+    //    @IBOutlet weak var saveMaterialID: UITextField!
+    //
+    //    @IBOutlet weak var saveStorageArea: UIPickerView!
+    @IBOutlet weak var saveMaterialButton: FlatButton!
     
-    @IBOutlet weak var saveMaterialNumber: UITextField!
     
-    @IBOutlet weak var saveMaterialID: UITextField!
-    
-    @IBOutlet weak var saveStorageArea: UIPickerView!
-    
-    @IBOutlet weak var saveMaterialSaveButton: UIButton!
+    @IBOutlet weak var searchView: SLSearchView!
     
     static let storageAreNames = ["RA1","RA2","RA3","RA4","RB1","RB2","RB3","RB4"]
     var fireBaseList = ["saveMaterialRespID", "saveMaterialNumber","saveMaterialID","saveStorageArea"]
@@ -29,52 +32,56 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         ref = Database.database().reference()
-        saveStorageArea.delegate = self
-        saveStorageArea.dataSource = self
-
+        
+        prepareButton()
+        
+        
+        searchView.pickerDeleteMaterial.delegate = self
+        searchView.pickerDeleteMaterial.dataSource = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
-
-
+    
+    func prepareButton(){
+        
+        saveMaterialButton.cornerRadiusPreset = .cornerRadius4
+        saveMaterialButton.pulseColor = .white
+        saveMaterialButton.depthPreset = .depth4
+        
+    }
+    
     @IBAction func saveMaterialButtonAction(_ sender: Any) {
         
-       /////////////////////////////firebase save///////////////////////////////
-     
+        /////////////////////////////firebase save///////////////////////////////
         
-        let name: NSString =  SaveMaterialViewController.storageAreNames[saveStorageArea.selectedRow(inComponent: 0)] as NSString
- 
         
-        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": saveMaterialRespID.text, "materialNumber": saveMaterialNumber.text, "materialID": saveMaterialID.text, "storageArea": name], withCompletionBlock: { (error, ref) in
-            if error == nil {
-                print("success")
-                
-                self.saveMaterialRespID.text = ""
-                self.saveMaterialNumber.text = ""
-                self.saveMaterialID.text = ""
-                
-            } else {
-                print("failure")
-            }
+        let name: NSString =  SaveMaterialViewController.storageAreNames[searchView.pickerDeleteMaterial.selectedRow(inComponent: 0)] as NSString
+        
+        ref?.child("material").childByAutoId().setValue(["materialResponsibleID": searchView.deleteResponsibleID.text, "materialNumber": searchView.deleteMaterialNumber.text, "materialID": searchView.deleteMaterialID.text, "storageArea": name], withCompletionBlock: { (error, ref) in
+        if error == nil {
+            self.searchView.deleteResponsibleID.text = ""
+            self.searchView.deleteMaterialNumber.text = ""
+            self.searchView.deleteMaterialID.text = ""
+        }
+        
         })
+        ///////////////////////////////////////////////////////////////////////////////////
+  
+        
     }
-       
-///////////////////////////////////////////////////////////////////////////////////
-//        waljfsdhfadkshfb
-
     
     
-  ///////////////////////////////Picker View İle ilgili
+    ///////////////////////////////Picker View İle ilgili
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
-   
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return SaveMaterialViewController.storageAreNames.count
     }
@@ -84,9 +91,10 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-     let selectedValue = SaveMaterialViewController.storageAreNames[row] as NSString
-      print(selectedValue)
+        let selectedValue = SaveMaterialViewController.storageAreNames[row] as NSString
+        print(selectedValue)
     }
-  /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
     
 }
+
