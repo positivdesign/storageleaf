@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+import Material
 class ViewController: UIViewController {
 
-    @IBOutlet weak var saveMaterialButton: UIButton!
-    @IBOutlet weak var RemoveMaterialButton: UIButton!
+    @IBOutlet weak var saveMaterialButton: FlatButton!
+    @IBOutlet weak var RemoveMaterialButton: FlatButton!
   
     
     override func viewDidLoad() {
@@ -31,11 +31,19 @@ class ViewController: UIViewController {
     }
 
     fileprivate func prepareRemoveMaterialButton(){
+        
+        RemoveMaterialButton.cornerRadiusPreset = .cornerRadius4
+        RemoveMaterialButton.pulseColor = .white
+        RemoveMaterialButton.depthPreset = .depth4
         RemoveMaterialButton.backgroundColor = SLColor.primary
         RemoveMaterialButton.addTarget(self, action: #selector(RemoveMaterialButtonAction), for: .touchUpInside)
     }
     
     fileprivate func preparesaveMaterialButton(){
+        
+        saveMaterialButton.cornerRadiusPreset = .cornerRadius4
+        saveMaterialButton.pulseColor = .white
+        saveMaterialButton.depthPreset = .depth4
         saveMaterialButton.backgroundColor = SLColor.primary
         saveMaterialButton.addTarget(self, action: #selector(saveMaterialButtonAction), for: .touchUpInside)
     }
@@ -52,6 +60,7 @@ class ViewController: UIViewController {
     
     
     @objc func RemoveMaterialButtonAction() {
+    
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let removeMaterialView = storyboard.instantiateViewController(withIdentifier: "DeleteMaterialViewController") as! DeleteMaterialViewController
