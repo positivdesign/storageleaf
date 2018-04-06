@@ -31,10 +31,12 @@ class ViewController: UIViewController {
     }
 
     fileprivate func prepareRemoveMaterialButton(){
+        RemoveMaterialButton.backgroundColor = SLColor.primary
         RemoveMaterialButton.addTarget(self, action: #selector(RemoveMaterialButtonAction), for: .touchUpInside)
     }
     
     fileprivate func preparesaveMaterialButton(){
+        saveMaterialButton.backgroundColor = SLColor.primary
         saveMaterialButton.addTarget(self, action: #selector(saveMaterialButtonAction), for: .touchUpInside)
     }
         
@@ -42,9 +44,9 @@ class ViewController: UIViewController {
     
     fileprivate func prepareNavigatorBar() {
         navigationItem.title = "StorageLeaf"
-        navigationController?.navigationBar.tintColor = Color.barTintColor
+        navigationController?.navigationBar.tintColor = SLColor.barTintColor
         navigationController?.navigationBar.barStyle = .blackTranslucent
-        navigationController?.navigationBar.barTintColor = Color.barColor
+        navigationController?.navigationBar.barTintColor = SLColor.barColor
     }
         
     

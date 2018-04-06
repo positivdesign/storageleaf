@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Material
 
 class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
@@ -19,26 +20,32 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
     static var materialStorageText: String?
     
     
-    @IBOutlet weak var deleteResponsibleID: UITextField!
+//    @IBOutlet weak var deleteResponsibleID: UITextField!
+//
+//    @IBOutlet weak var deleteMaterialNumber: UITextField!
+//
+//    @IBOutlet weak var deleteMaterialID: UITextField!
     
-    @IBOutlet weak var deleteMaterialNumber: UITextField!
+    @IBOutlet weak var deleteMaterialSearchButton: FlatButton!
     
-    @IBOutlet weak var deleteMaterialID: UITextField!
+//    @IBOutlet weak var switchDeleteSearchButton: UISwitch!
+//
+    //@IBOutlet weak var pickerDeleteMaterial: UIPickerView!
     
-    @IBOutlet weak var deleteMaterialSearchButton: UIButton!
     
-    @IBOutlet weak var switchDeleteSearchButton: UISwitch!
+    @IBOutlet weak var searchView: SLSearchView!
     
-    @IBOutlet weak var pickerDeleteMaterial: UIPickerView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
 
+        super.viewDidLoad()
+        
+        prepareButton()
         
         
-        pickerDeleteMaterial.delegate = self
-        pickerDeleteMaterial.dataSource = self
+        searchView.pickerDeleteMaterial.delegate = self
+        searchView.pickerDeleteMaterial.dataSource = self
 ///picker için default hidden fonksiyonu tanımlandı
         pickerDeleteIsHidden()
 
@@ -52,6 +59,14 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
    
     
     }
+    
+    func prepareButton() {
+        
+        deleteMaterialSearchButton.cornerRadiusPreset = .cornerRadius4
+        deleteMaterialSearchButton.pulseColor = .white
+        deleteMaterialSearchButton.depthPreset = .depth4
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,22 +74,9 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
     }
     
     
-    @IBAction func pickerDeleteMaterialAction(_ sender: Any) {
-        
-        if switchDeleteSearchButton.isOn {
-            
-            pickerDeleteMaterial.isHidden = false
-        }
-        else {
-            
-            pickerDeleteMaterial.isHidden = true
-        }
-        
-    }
-    
     
     func pickerDeleteIsHidden(){
-         pickerDeleteMaterial.isHidden = true
+         searchView.pickerDeleteMaterial.isHidden = true
     }
     ///////////////////////////////Picker View İle ilgili
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -98,14 +100,14 @@ class DeleteMaterialViewController: UIViewController, UIPickerViewDataSource,UIP
     
     @IBAction func deleteMaterialSearchButtonAction(_ sender: Any) {
         
-        DeleteMaterialViewController.materialIDText = deleteMaterialID.text
-        DeleteMaterialViewController.materialNumberText = deleteMaterialNumber.text
-        DeleteMaterialViewController.resIDText = deleteResponsibleID.text
+        DeleteMaterialViewController.materialIDText = searchView.deleteMaterialID.text
+        DeleteMaterialViewController.materialNumberText = searchView.deleteMaterialNumber.text
+        DeleteMaterialViewController.resIDText = searchView.deleteResponsibleID.text
         
-        if pickerDeleteMaterial.isHidden == true {
+        if searchView.pickerDeleteMaterial.isHidden == true {
             DeleteMaterialViewController.materialStorageText = ""
         } else {
-            DeleteMaterialViewController.materialStorageText = SaveMaterialViewController.storageAreNames[pickerDeleteMaterial.selectedRow(inComponent: 0)]
+            DeleteMaterialViewController.materialStorageText = SaveMaterialViewController.storageAreNames[searchView.pickerDeleteMaterial.selectedRow(inComponent: 0)]
             
         }
         

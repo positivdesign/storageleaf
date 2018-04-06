@@ -7,10 +7,14 @@
 
 import UIKit
 
-struct Color {
-    static let barColor = UIColor(rgb: 0x85B83F)
+struct SLColor {
+    
+    static let barColor = UIColor(rgb: 0x1B5E20)
+    static let barColor2 = UIColor(rgb: 0x85B83F)
+    static let primary = UIColor(rgb: 0x4CAF50)
     static let barTintColor = UIColor.white
 //    static let barStyle = UIColor.blackTranslucent
+    
 }
 
 extension UIColor {

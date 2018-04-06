@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		78E780C47929C0C05BE5237F /* Pods_storageleaf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6709690FF871ED7AB689B35D /* Pods_storageleaf.framework */; };
 		C846363C2072417600B024DD /* MaterialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C846363B2072417600B024DD /* MaterialTableViewCell.xib */; };
-		C887A3332073C57C00F3206B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C887A3322073C57C00F3206B /* Color.swift */; };
+		C887A3332073C57C00F3206B /* SLColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C887A3322073C57C00F3206B /* SLColor.swift */; };
 		DB115C4B207209680086159E /* SaveMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB115C4A207209680086159E /* SaveMaterialViewController.swift */; };
 		DB115C4D20720E4D0086159E /* DeleteMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */; };
 		DB115C5120721A5B0086159E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DB115C5020721A5B0086159E /* .gitignore */; };
@@ -22,6 +22,9 @@
 		DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AD20715C9E00FEE0E3 /* Assets.xcassets */; };
 		DB4562B120715C9E00FEE0E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4562AF20715C9E00FEE0E3 /* LaunchScreen.storyboard */; };
 		DB84D639207391D9007B2A60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB84D638207391D9007B2A60 /* GoogleService-Info.plist */; };
+		DBB6A33720774CEC000C467C /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB6A33620774CEC000C467C /* NibView.swift */; };
+		DBB6A33920774D95000C467C /* SLSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB6A33820774D95000C467C /* SLSearchView.swift */; };
+		DBB6A33B20774DC2000C467C /* SLSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB6A33A20774DC2000C467C /* SLSearchView.xib */; };
 		DBCD41AE20764F9800935FE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD41AD20764F9800935FE6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +33,7 @@
 		95BC16D7558E812C2FA838F0 /* Pods-storageleaf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storageleaf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf.debug.xcconfig"; sourceTree = "<group>"; };
 		ABAF2B2F215858A2A850E784 /* Pods-storageleaf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storageleaf.release.xcconfig"; path = "Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf.release.xcconfig"; sourceTree = "<group>"; };
 		C846363B2072417600B024DD /* MaterialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialTableViewCell.xib; sourceTree = "<group>"; };
-		C887A3322073C57C00F3206B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = ../Color.swift; sourceTree = "<group>"; };
+		C887A3322073C57C00F3206B /* SLColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SLColor.swift; path = ../SLColor.swift; sourceTree = "<group>"; };
 		DB115C4A207209680086159E /* SaveMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMaterialViewController.swift; sourceTree = "<group>"; };
 		DB115C4C20720E4D0086159E /* DeleteMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMaterialViewController.swift; sourceTree = "<group>"; };
 		DB115C5020721A5B0086159E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -45,6 +48,9 @@
 		DB4562B020715C9E00FEE0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB4562B220715C9E00FEE0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB84D638207391D9007B2A60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DBB6A33620774CEC000C467C /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		DBB6A33820774D95000C467C /* SLSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLSearchView.swift; sourceTree = "<group>"; };
+		DBB6A33A20774DC2000C467C /* SLSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLSearchView.xib; sourceTree = "<group>"; };
 		DBCD41AD20764F9800935FE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +105,7 @@
 		DB4562A520715C9E00FEE0E3 /* storageleaf */ = {
 			isa = PBXGroup;
 			children = (
-				C887A3322073C57C00F3206B /* Color.swift */,
+				C887A3322073C57C00F3206B /* SLColor.swift */,
 				DB4562A620715C9E00FEE0E3 /* AppDelegate.swift */,
 				DB115C5820727A610086159E /* Material.swift */,
 				DB115C5920727A620086159E /* MaterialTableViewCell.swift */,
@@ -114,6 +120,9 @@
 				DB4562B220715C9E00FEE0E3 /* Info.plist */,
 				DB84D638207391D9007B2A60 /* GoogleService-Info.plist */,
 				DBCD41AD20764F9800935FE6 /* Constants.swift */,
+				DBB6A33620774CEC000C467C /* NibView.swift */,
+				DBB6A33820774D95000C467C /* SLSearchView.swift */,
+				DBB6A33A20774DC2000C467C /* SLSearchView.xib */,
 			);
 			path = storageleaf;
 			sourceTree = "<group>";
@@ -186,6 +195,7 @@
 				DB4562AE20715C9E00FEE0E3 /* Assets.xcassets in Resources */,
 				DB4562AC20715C9E00FEE0E3 /* Main.storyboard in Resources */,
 				DB84D639207391D9007B2A60 /* GoogleService-Info.plist in Resources */,
+				DBB6A33B20774DC2000C467C /* SLSearchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +225,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-storageleaf/Pods-storageleaf-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -222,6 +234,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -256,13 +270,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB6A33920774D95000C467C /* SLSearchView.swift in Sources */,
 				DB115C5A20727A620086159E /* Material.swift in Sources */,
 				DBCD41AE20764F9800935FE6 /* Constants.swift in Sources */,
 				DB4562A920715C9E00FEE0E3 /* ViewController.swift in Sources */,
-				C887A3332073C57C00F3206B /* Color.swift in Sources */,
+				C887A3332073C57C00F3206B /* SLColor.swift in Sources */,
 				DB115C532072386E0086159E /* ListMaterialViewController.swift in Sources */,
 				DB4562A720715C9E00FEE0E3 /* AppDelegate.swift in Sources */,
 				DB115C4D20720E4D0086159E /* DeleteMaterialViewController.swift in Sources */,
+				DBB6A33720774CEC000C467C /* NibView.swift in Sources */,
 				DB115C5B20727A620086159E /* MaterialTableViewCell.swift in Sources */,
 				DB115C4B207209680086159E /* SaveMaterialViewController.swift in Sources */,
 			);
