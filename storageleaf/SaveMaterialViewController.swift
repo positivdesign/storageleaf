@@ -25,7 +25,7 @@ class SaveMaterialViewController: UIViewController, UIPickerViewDataSource,UIPic
     
     static let storageAreNames = ["RA1","RA2","RA3","RA4","RB1","RB2","RB3","RB4"]
     var fireBaseList = ["saveMaterialRespID", "saveMaterialNumber","saveMaterialID","saveStorageArea"]
-    
+    //DRE
     
     override func viewDidLoad() {
         super.viewDidLoad()
