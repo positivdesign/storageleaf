@@ -69,52 +69,54 @@ class ListMaterialViewController: UIViewController {
 
             // TODO: FIX ME
             
-            if DeleteMaterialViewController.materialIDText == matID ||
-                DeleteMaterialViewController.resIDText == matResp ||
-            DeleteMaterialViewController.materialNumberText == matNum ||
-        DeleteMaterialViewController.materialStorageText == matStor {
-                
-                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
-                
-                var found = false
-                for material in ListMaterialViewController.materialArray {
-                    if material.postID == newItem.postID {
-                        found = true
-                        break
-                    }
-                }
-                if !found {
-                    
-                    //Constants.shared.getMaterials()
-                    ListMaterialViewController.materialArray.append(newItem)
-                }
-                
-                self.tableView.reloadData()
-                
-            }
             
-            if DeleteMaterialViewController.materialIDText == "" &&
-                DeleteMaterialViewController.resIDText == "" &&
-                DeleteMaterialViewController.materialNumberText == "" &&
-                DeleteMaterialViewController.materialStorageText == "" {
-                
-                let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
-                
-                var found = false
-                for material in ListMaterialViewController.materialArray {
-                    if material.postID == newItem.postID {
-                        found = true
-                        break
-                    }
-                }
-                if !found {
+            if (DeleteMaterialViewController.materialIDText == "" &&
+                    DeleteMaterialViewController.resIDText == "" &&
+                    DeleteMaterialViewController.materialNumberText == "" &&
+                    DeleteMaterialViewController.materialStorageText == "") {
                     
-                   // Constants.shared.getMaterials()
-                    ListMaterialViewController.materialArray.append(newItem)
-                }
-                
-                self.tableView.reloadData()
-                
+                    let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
+                    
+                    var found = false
+                    for material in ListMaterialViewController.materialArray {
+                        if material.postID == newItem.postID {
+                            found = true
+                            break
+                        }
+                    }
+                    if !found {
+                        
+                        // Constants.shared.getMaterials()
+                        ListMaterialViewController.materialArray.append(newItem)
+                        
+                        print(postID)
+                    }
+                    
+                    self.tableView.reloadData()
+            }
+            else if ((DeleteMaterialViewController.materialIDText == matID && !(DeleteMaterialViewController.materialIDText?.isEmpty)!) ||
+                    (DeleteMaterialViewController.resIDText == matResp  && !(DeleteMaterialViewController.resIDText?.isEmpty)!) ||
+                    (DeleteMaterialViewController.materialNumberText == matNum && !(DeleteMaterialViewController.materialNumberText?.isEmpty)!) ||
+                    DeleteMaterialViewController.materialStorageText == matStor) {
+                    
+                    let newItem = Material(matID, matResp, matStor, matNum, postID, materialImage: UIImage(named:"storage"))
+                    
+                    var found = false
+                    for material in ListMaterialViewController.materialArray {
+                        if material.postID == newItem.postID {
+                            found = true
+                            break
+                        }
+                    }
+                    if !found {
+                        
+                        //Constants.shared.getMaterials()
+                        ListMaterialViewController.materialArray.append(newItem)
+                        
+                        print("burda")
+                    }
+                    
+                    self.tableView.reloadData()
             }
             
         }
